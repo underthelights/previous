@@ -39,6 +39,9 @@ author:
   linkedin: shim-kyu-hwan-a95b31198
   instagram: s.kyuhwn
 
+sass:
+  sass_dir: _sass
+  style: compressed
 
 ## => GitHub Repository (if the site is hosted by GitHub)
 ##############################
