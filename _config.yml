@@ -25,7 +25,7 @@ description: >
 
 ## => Language and Timezone
 ##############################
-lang:  'ko', 'en'
+lang:  'ko' 'en'
 timezone: Asia/Seoul
 
 
