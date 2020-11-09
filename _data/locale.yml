@@ -1,0 +1,61 @@
+SUBSCRIBE:
+  en:      "Subscribe"
+  ko:      "구독"
+
+READMORE:
+  en:      "Read more"
+  ko:      "더 읽어보기"
+
+SEARCH:
+  en:      "Search"
+  ko:      "검색"
+
+CANCEL:
+  en:      "Cancel"
+  ko:      "취소"
+
+VIEWS:
+  en:      "views"
+  ko:      "관람"
+
+LAST_UPDATED:
+  en:      "Last updated"
+  ko:      "최종 업데이트"
+
+PREVIOUS:
+  en:      "PREVIOUS"
+  ko:      "이전"
+
+NEXT:
+  en:      "NEXT"
+  ko:      "다음"
+
+ARTICLE_DATE_FORMAT:
+  en:      "%b %d, %Y"
+  ko:      "%Y年 %m月%d日"
+
+ARTICLE_LIST_DATE_FORMAT:
+  en:      "%b %d"
+  ko:      "%m月%d日"
+
+STATISTICS:
+  en:      "[POST_COUNT] post articles, [PAGE_COUNT] pages."
+  ko:      "[POST_COUNT] post articles, [PAGE_COUNT] pages."
+
+LICENSE_ANNOUNCE:
+  en:      "This work is licensed under a [LICENSE] license."
+  ko:      "이 작품들은 [LICENSE] 하에서 보호됩니다。"
+
+POST_ON_GITHUB:
+  en:      "Edit on Github"
+  ko:      "Edit on Github"
+
+FOLLOW_ME:
+  en:      "Follow me on [NAME]."
+  ko:      "Follow me on [NAME]."
+
+EMAIL_ME:
+  en:      "Send me Email."
+  ko:      "Send me Email."
+
+COPYRIGHT_DATES: "2019"

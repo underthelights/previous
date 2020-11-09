@@ -1,0 +1,11 @@
+header:
+  - title:      blog
+    url:        /blog/
+  - titles:
+      en:       Archive
+      ko:       Archive
+    url:        /blog/archive.html
+  - titles:
+      en:       About
+      ko:       About
+    url:        /blog/about.html
