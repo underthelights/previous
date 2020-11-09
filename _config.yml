@@ -16,6 +16,8 @@
 
 ## => Site Settings
 ##############################
+url: https://underthelights.github.io
+baseurl: 
 title: BE HUMBLE.
 description: >
     s.kyuhwn github blog 
