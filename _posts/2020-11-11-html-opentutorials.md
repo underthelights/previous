@@ -20,6 +20,9 @@ https://opentutorials.org/course/2039/10932
 우리 모두는 <strong>자신의 힘</strong>으로 발견한 내용을 가장 쉽게 익힌다.  
 (<a target="_blank" href="https://ko.wikipedia.org/wiki/%EB%8F%84%EB%84%90%EB%93%9C_%EC%BB%A4%EB%88%84%EC%8A%A4" title="전설적인 프로그래머">도널드 커누스</a>)  
 ```
+<h1>오늘의 명언</h1>  
+우리 모두는 <strong>자신의 힘</strong>으로 발견한 내용을 가장 쉽게 익힌다.  
+(<a target="_blank" href="https://ko.wikipedia.org/wiki/%EB%8F%84%EB%84%90%EB%93%9C_%EC%BB%A4%EB%88%84%EC%8A%A4" title="전설적인 프로그래머">도널드 커누스</a>)  
 
 # 3. 태그의 중첩과 목록
 ```mermaid
@@ -36,6 +39,18 @@ https://opentutorials.org/course/2039/10932
   <li>한이은</li>  
 </ul>  
 ```
+<ol>  
+  <li>기술소개</li>  
+  <li>기본문법</li>  
+  <li>하이퍼텍스트와 속성</li>  
+  <li>리스트와 태그의 중첩</li>  
+</ol>  
+<ul>  
+  <li>최진혁</li>  
+  <li>최유빈</li>  
+  <li>한이람</li>  
+  <li>한이은</li>  
+</ul>  
 # 4. 문서의 구조
 ```mermaid
 <html>  
@@ -58,6 +73,24 @@ https://opentutorials.org/course/2039/10932
 </html>  
 ```
 
+<html>  
+<head>  
+  <title>HTML - 수업소개</title>  
+  <meta charset="utf-8">  
+</head>  
+<body>  
+<h1>HTML</h1>  
+<ol>  
+  <li>기술소개</li>  
+  <li>기본문법</li>  
+  <li>하이퍼텍스트와 속성</li>  
+  <li>리스트와 태그의 중첩</li>  
+</ol>  
+ 
+<h2>선행학습</h2>  
+ 
+</body>  
+</html>  
 # 5. DOCTYPE
 ```mermaid
 <!DOCTYPE html>   
@@ -81,6 +114,27 @@ https://opentutorials.org/course/2039/10932
 </body>  
 </html>  
 ```
+
+<!DOCTYPE html>   
+<html>   
+<head>  
+  <title>HTML - 수업소개</title>  
+  <meta charset="utf-8">  
+</head>  
+<body>  
+<h1>HTML</h1>  
+<ol>  
+  <li>기술소개</li>  
+  <li>기본문법</li>  
+  <li>하이퍼텍스트와 속성</li>  
+  <li>리스트와 태그의 중첩</li>  
+</ol>  
+ 
+<h2>선행학습</h2>  
+ 
+
+</body>  
+</html>  
 본 수업을 효과적으로 수행하기 위해서는 웹애플리케이션에 대한 전반적인 이해가 필요합니다. 이를 위해서 준비된 수업은 아래 링크를 통해서 접근하실 수 있습니다. 
 
 # 6. 웹사이트 만들기
@@ -107,6 +161,27 @@ https://opentutorials.org/course/2039/10932
 </body>
 </html>
 ```
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML - 수업소개</title>
+  <meta charset="utf-8">
+</head>
+<body>
+<h1><a href="index.html">HTML</a></h1>
+<ol>
+  <li><a href="1.html">기술소개</a></li>
+  <li><a href="2.html">기본문법<a/></li>
+  <li><a href="3.html">하이퍼텍스트와 속성</a></li>
+  <li><a href="4.html">리스트와 태그의 중첩</a></li>
+</ol>
+ 
+<h2>선행학습</h2>
+ 
+</body>
+</html>
+
 ### 1. html
 ```
 <!DOCTYPE html>  
@@ -129,6 +204,27 @@ HTML은 HyperText Markup Language의 약자로서 웹페이지를 만드는 언�
 </body>  
 </html>  
 ```
+
+<!DOCTYPE html>  
+<html>  
+<head>  
+  <title>HTML - 수업소개</title>  
+  <meta charset="utf-8">  
+</head>  
+<body>  
+<h1><a href="index.html">HTML</a></h1>  
+<ol>  
+  <li><a href="1.html">기술소개</a></li>  
+  <li><a href="2.html">기본문법<a/></li>  
+  <li><a href="3.html">하이퍼텍스트와 속성</a></li>  
+  <li><a href="4.html">리스트와 태그의 중첩</a></li>  
+</ol>  
+ 
+<h2>기술소개</h2>   
+HTML은 HyperText Markup Language의 약자로서 웹페이지를 만드는 언어입니다.  
+</body>  
+</html>  
+
 # 7. 개발도구
 
 atom (추천 확장기능 emmet)   
@@ -154,6 +250,19 @@ https://www.advancedwebranking.com/html/
     </body>
 </html>
 ```
+
+<html>
+    <head><meta charset="utf-8"></head>
+    <body>
+ 
+<p>HyperText Markup Language, commonly referred to as HTML, is the standard markup language used to create web pages. Along with CSS, and JavaScript, HTML is a cornerstone technology, used by most websites to create visually engaging webpages, user interfaces for web applications, and user interfaces for many mobile applications.[1] Web browsers can read HTML files and render them into visible or audible web pages. HTML describes the structure of a website semantically along with cues for presentation, making it a markup language, rather than a programming language.</p>
+ 
+<p>HTML elements form the building blocks of all websites. HTML allows images and objects to be embedded and can be used to create interactive forms. It provides a means to create structured documents by denoting structural semantics for text such as headings, paragraphs, lists, links, quotes and other items.</p>
+ 
+<p>The language is written in the form of HTML elements consisting of tags enclosed in angle brackets . Browsers do not display the HTML tags and scripts, but use them to interpret the content of the page.</p>
+    </body>
+</html>
+
 # 2. 줄바꿈 - br
 ```
 <html>
@@ -167,6 +276,19 @@ The language is written in the form of HTML elements consisting of tags enclosed
 </body>
 </html>
 ```
+
+
+<html>
+<head><meta charset="utf-8"></head>
+<body>
+HyperText Markup Language, commonly referred to as HTML, is the standard markup language used to create web pages. Along with CSS, and JavaScript, HTML is a cornerstone technology, used by most websites to create visually engaging webpages, user interfaces for web applications, and user interfaces for many mobile applications.[1] Web browsers can read HTML files and render them into visible or audible web pages. HTML describes the structure of a website semantically along with cues for presentation, making it a markup language, rather than a programming language.<br><br><br>
+ 
+HTML elements form the building blocks of all websites. HTML allows images and objects to be embedded and can be used to create interactive forms. It provides a means to create structured documents by denoting structural semantics for text such as headings, paragraphs, lists, links, quotes and other items.<br><br><br>
+ 
+The language is written in the form of HTML elements consisting of tags enclosed in angle brackets. Browsers do not display the HTML tags and scripts, but use them to interpret the content of the page<br><br><br>
+</body>
+</html>
+
 # 3. 이미지 - img
 ```
 <html>
@@ -194,6 +316,24 @@ The language is written in the form of HTML elements consisting of tags enclosed
 </body>
 </html>
 ```
+
+<html>
+<head><meta charset="utf-8"></head>
+<body>
+<table border="2">
+    <tr>
+        <td>이름</td>     <td>성별</td>   <td>주소</td>
+    </tr>
+    <tr>
+        <td>최진혁</td>  <td>남</td>      <td >청주</td>
+    </tr>
+    <tr>
+        <td>최유빈</td>  <td>여</td>      <td>청주</td>
+    </tr>
+</table>
+</body>
+</html>
+
 # 5. 입력양식 - form
 ```
 <html>
@@ -213,6 +353,23 @@ The language is written in the form of HTML elements consisting of tags enclosed
 </body>
 </html>
 ```
+
+<html>
+<head><meta charset="utf-8"></head>
+<body>
+<table border="2">
+    <tr>
+        <td>이름</td>     <td>성별</td>   <td>주소</td>
+    </tr>
+    <tr>
+        <td>최진혁</td>  <td>남</td>      <td >청주</td>
+    </tr>
+    <tr>
+        <td>최유빈</td>  <td>여</td>      <td>청주</td>
+    </tr>
+</table>
+</body>
+</html>
 ## 5.1. 텍스트 입력
 ```
 <html>
@@ -230,6 +387,22 @@ The language is written in the form of HTML elements consisting of tags enclosed
 </body>
 </html>
 ```
+
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <form action="">
+        <p>text : <input type="text" name="id" value="default value"></p>
+        <p>password : <input type="password" name="pwd" value="default value"></p>
+        <p>textarea :
+            <textarea cols="50" rows="2">default value</textarea>
+        </p>
+    </form>
+</body>
+</html>
+
 ## 5.2. 선택
 ```
 <html>
@@ -255,6 +428,30 @@ The language is written in the form of HTML elements consisting of tags enclosed
     </body>
 </html>
 ```
+
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form action="http://localhost/color.php">
+            <h1>색상</h1>
+            <select name="color">
+                <option value="red">붉은색</option>
+                <option value="black">검은색</option>
+                <option value="blue">파란색</option>
+            </select>
+            <h1>색상2 (다중선택)</h1>
+            <select name="color2" multiple>
+                <option value="red">붉은색</option>
+                <option value="black">검은색</option>
+                <option value="blue">파란색</option>
+            </select>
+            <input type="submit">
+        </form>
+    </body>
+</html>
+
 ## 5.3. 버튼
 ```
 <html>
@@ -269,6 +466,19 @@ The language is written in the form of HTML elements consisting of tags enclosed
 </body>
 </html>
 ```
+
+<html>
+<head><meta charset="utf-8"></head>
+<body>
+    <form action="http://localhost/form.php">
+        <input type="text">
+        <input type="submit" value="전송">
+        <input type="button" value="버튼" onclick="alert('hello world')">
+        <input type="reset">
+    </form>
+</body>
+</html>
+
 ## 5.4. 데이터 전송 - hidden
 ```
 <html>
@@ -510,6 +720,20 @@ week
     </body>
 </html>
 ```
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form action="login.php" autocomplete="on">
+            <input type="text" name="id" placeholder="id를 입력해주세요." autofocus>
+            <input type="password" name="password" autocomplete="off" placeholder="비밀번호를 입력해주세요.">
+            <input type="submit">
+        </form>
+    </body>
+</html>
+
 ## 3.2. HTML5 입력 값 체크
 ```
 <!DOCTYPE html>
@@ -526,4 +750,18 @@ week
     </body>
 </html>
 ```
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form action="register.php">
+            <input type="text" name="id" placeholder="아이디를 입력" required pattern="[a-zA-Z].+[0-9]">
+            <input type="email" name="email" placeholder="이메일 입력">
+            <input type="submit">
+        </form>
+    </body>
+</html>
 https://opentutorials.org/course/909/5142
