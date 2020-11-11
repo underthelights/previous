@@ -9,77 +9,79 @@ modify_date: 2020-11-11 12:30:00 +08:00
 picture_frame: shadow
 ---
 
-**생활코딩 html 수업에서 학습한 내용을 정리한 노트입니다.**
+**생활코딩 html 수업에서 학습한 내용을 정리한 노트입니다.**  
 https://opentutorials.org/course/2039/10932
 <!--more-->
 
 
 # 2. Hypertext, 속성
 ```mermaid
-<h1>오늘의 명언</h1>
-우리 모두는 <strong>자신의 힘</strong>으로 발견한 내용을 가장 쉽게 익힌다.
-(<a target="_blank" href="https://ko.wikipedia.org/wiki/%EB%8F%84%EB%84%90%EB%93%9C_%EC%BB%A4%EB%88%84%EC%8A%A4" title="전설적인 프로그래머">도널드 커누스</a>)
+<h1>오늘의 명언</h1>  
+우리 모두는 <strong>자신의 힘</strong>으로 발견한 내용을 가장 쉽게 익힌다.  
+(<a target="_blank" href="https://ko.wikipedia.org/wiki/%EB%8F%84%EB%84%90%EB%93%9C_%EC%BB%A4%EB%88%84%EC%8A%A4" title="전설적인 프로그래머">도널드 커누스</a>)  
 ```
 
 # 3. 태그의 중첩과 목록
 ```mermaid
-<ol>
-  <li>기술소개</li>
-  <li>기본문법</li>
-  <li>하이퍼텍스트와 속성</li>
-  <li>리스트와 태그의 중첩</li>
-</ol>
-<ul>
-  <li>최진혁</li>
-  <li>최유빈</li>
-  <li>한이람</li>
-  <li>한이은</li>
-</ul>
+<ol>  
+  <li>기술소개</li>  
+  <li>기본문법</li>  
+  <li>하이퍼텍스트와 속성</li>  
+  <li>리스트와 태그의 중첩</li>  
+</ol>  
+<ul>  
+  <li>최진혁</li>  
+  <li>최유빈</li>  
+  <li>한이람</li>  
+  <li>한이은</li>  
+</ul>  
 ```
 # 4. 문서의 구조
 ```mermaid
-<html>
-<head>
-  <title>HTML - 수업소개</title>
-  <meta charset="utf-8">
-</head>
-<body>
-<h1>HTML</h1>
-<ol>
-  <li>기술소개</li>
-  <li>기본문법</li>
-  <li>하이퍼텍스트와 속성</li>
-  <li>리스트와 태그의 중첩</li>
-</ol>
+<html>  
+<head>  
+  <title>HTML - 수업소개</title>  
+  <meta charset="utf-8">  
+</head>  
+<body>  
+<h1>HTML</h1>  
+<ol>  
+  <li>기술소개</li>  
+  <li>기본문법</li>  
+  <li>하이퍼텍스트와 속성</li>  
+  <li>리스트와 태그의 중첩</li>  
+</ol>  
  
-<h2>선행학습</h2>
+<h2>선행학습</h2>  
  
-</body>
-</html>
+</body>  
+</html>  
 ```
 
 # 5. DOCTYPE
-<!DOCTYPE html>
-<html>
-<head>
-  <title>HTML - 수업소개</title>
-  <meta charset="utf-8">
-</head>
-<body>
-<h1>HTML</h1>
-<ol>
-  <li>기술소개</li>
-  <li>기본문법</li>
-  <li>하이퍼텍스트와 속성</li>
-  <li>리스트와 태그의 중첩</li>
-</ol>
+```mermaid
+<!DOCTYPE html>   
+<html>   
+<head>  
+  <title>HTML - 수업소개</title>  
+  <meta charset="utf-8">  
+</head>  
+<body>  
+<h1>HTML</h1>  
+<ol>  
+  <li>기술소개</li>  
+  <li>기본문법</li>  
+  <li>하이퍼텍스트와 속성</li>  
+  <li>리스트와 태그의 중첩</li>  
+</ol>  
  
-<h2>선행학습</h2>
+<h2>선행학습</h2>  
  
-본 수업을 효과적으로 수행하기 위해서는 웹애플리케이션에 대한 전반적인 이해가 필요합니다. 이를 위해서 준비된 수업은 아래 링크를 통해서 접근하실 수 있습니다. 
-</body>
-</html>
 
+</body>  
+</html>  
+```
+본 수업을 효과적으로 수행하기 위해서는 웹애플리케이션에 대한 전반적인 이해가 필요합니다. 이를 위해서 준비된 수업은 아래 링크를 통해서 접근하실 수 있습니다. 
 # 6. 웹사이트 만들기
 
 ### index.html
