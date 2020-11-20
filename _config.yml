@@ -34,7 +34,7 @@ timezone: Asia/Seoul
 author:
   name: s.kyuhwn
   email: mailto:skh7343@cnsh.hs.kr
-  github:  conatusss
+  github: underthelights
   # googleplus: 
   linkedin: shim-kyu-hwan-a95b31198
   instagram: s.kyuhwn
@@ -78,7 +78,7 @@ paginate_path: /blog/page:num
 comments:
   provider: disqus
   disqus:
-    shortname: kitian616-github-io
+    shortname: underthelights-github-io
 
 
 ## => Pageview
