@@ -1,4 +1,4 @@
-—
+---
 layout: article
 title: thepurpleuenote
 key: 00000
@@ -7,11 +7,11 @@ category: purplenote
 date: 2020-12–07 19:48:00 +08:00
 modify_date: 2020-12-07 20:30:00 +08:00
 picture_frame: shadow
-—
+---
 reminiscence.
 
 **Was dich nicht tötet macht dich stärker. ― Friedrich Nietzsche**
-<!—more—>
+<!—-more-—>
 
 ## 2020
 
