@@ -1,6 +1,6 @@
 ---
 layout: article
-title: thepurpleuenote
+title: thepurplenote
 key: 00000
 tags: thepurplenote
 category: purplenote
