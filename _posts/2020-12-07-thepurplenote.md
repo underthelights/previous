@@ -1,60 +1,57 @@
 ---
 layout: article
-title: thepurpleuenote
-key: 00000
-tags: thepurplenote
-category: purplenote
-date: 2020-12–07 19:48:00 +08:00
-modify_date: 2020-12-07 20:30:00 +08:00
+title: thebluenote
+key: 10009
+tags: thebluenote
+category: bluenote
+date: 2020-11-07 09:48:00 +08:00
+modify_date: 2020-11-07 14:30:00 +08:00
 picture_frame: shadow
 ---
-reminiscence.
+everyday go hard
 
-**Was dich nicht tötet macht dich stärker. ― Friedrich Nietzsche**
+**BE HUMBLE.**
 <!--more-->
 
 ## 2020
 
-### 11月-12月
+### 11月
 
 #### 알고리즘
-##### [책] 알고리즘문제해결전략
-- 역시나 problem solving을 하기는 쉽지 않은 환경이다. 따라서, 알고리즘문제해결전략2 책을 1회독 완료한 후 알고리즘문제해결전략1 책을 읽는 중이다.
-- 다만 노트필기와 병행한, 세부적 내용을 완독하며 책을 읽기에는 시간이 부족하리라 판단, 1권은 좀 더 roughly하게 책을 읽고 있다.
-- 주요 공부 시간: 09:00-11:30
-##### todolist
-- 쉽게 배우는 알고리즘(문병로)
-- KAIST KOOC : 자료구조 및 알고리즘 개론 I https://kaist.edwith.org/intro-data-and-algo-2018
-- 
-#### 프로젝트
-##### [PRJ] WEB - 
-- [공부] html - css - java - database - backend
-- 생활코딩 참고 - opentutorials
-- NomadCoder?
+- 알고리즘문제해결전략2(구종만) 1회독(완)
 
-[구현]
-- login.html / css
-- register.html / css
-- /ongoing/
-- findpw.html / css
-- productexplain.html / css
+#### 프로젝트
+- 웹프로그래밍 프로젝트 : frontend, backend, database, et al
+- html, css -> react, scss, node.js, et al
+- SKKU flea market
 
 #### 수학
-##### 선형대수학
-- LaTeX Syllabus making..
-- from lecturenote of : KAIST POSTECH SKKU SG 
-- and major book : FRIEDBERG
-- PRML (bishop) DLBOOK(goodfellow) 와 연계한 취사선택, 기초 정의-정리-활용 습득의 완전화를 목표.
+- 기초선형대수학
+- 기초미적분학
 
 #### 인공지능
-- Stanford cs231n & KAIST KOOC 인공지능 및 기계학습 개론 Ⅰ https://kaist.edwith.org/machinelearning1_17
-- +) pseudolabs @youtube
+- Stanford cs231n & KAIST KOOC 인공지능 및 기계학습 개론Ⅰhttps://kaist.edwith.org/machinelearning1_17
 - KAIST KOOC : 논문으로 짚어보는 딥러닝의 맥 https://www.edwith.org/deeplearningchoi
-* [refs]
-- 서울대학교AI연구원 @youtube
-- 
-
-#### Python
 - SNUON : Python?
 - KAIST KOOC : Python4ai https://kaist.edwith.org/python4ai
+
+### 12月
+
+#### 알고리즘
+- 알고리즘문제해결전략1(구종만): 1회독(완)
+- 쉽게 배우는 알고리즘(문병로)
+- KAIST KOOC : 자료구조 및 알고리즘 개론 I https://kaist.edwith.org/intro-data-and-algo-2018
+
+#### 프로젝트
+- 웹프로그래밍 프로젝트: frontend, backend, database, et al
+- html, css -> react, scss, node.js, et al
+- OCONNECT homepage
+
+#### 수학
+- 선형대수학 (POSTECH, Friedberg)
+- Set theory
+
+#### 인공지능
+- Stanford cs231n
+- KAIST KOOC : 
 
