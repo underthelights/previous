@@ -1,7 +1,7 @@
 ---
 layout: article
 title: thepurplenote
-key: 00000
+key: 100001
 tags: thepurplenote
 category: purplenote
 date: 2020-12–07 19:48:00 +08:00
