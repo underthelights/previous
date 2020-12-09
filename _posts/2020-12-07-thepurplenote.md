@@ -1,14 +1,14 @@
 ---
 layout: article
-title: thebluenote
+title: thepurplenote
 key: 10009
-tags: thebluenote
-category: bluenote
-date: 2020-11-07 09:48:00 +08:00
-modify_date: 2020-11-07 14:30:00 +08:00
+tags: thepurplenote
+category: purplenote
+date: 2020-12-07 09:48:00 +08:00
+modify_date: 2020-12-07 14:30:00 +08:00
 picture_frame: shadow
 ---
-everyday go hard
+dd
 
 **BE HUMBLE.**
 <!--more-->
