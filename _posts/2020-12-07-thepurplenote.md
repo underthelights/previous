@@ -12,7 +12,8 @@ picture_frame: shadow
 
 **Was dich nicht tötet macht dich stärker. ― Friedrich Nietzsche**
 reminiscence.
-<!--more-->
+
+<!-- more -->
 
 
 ## 2020 11月-12月
