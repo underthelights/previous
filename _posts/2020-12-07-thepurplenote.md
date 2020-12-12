@@ -31,7 +31,7 @@ reminiscence.
 #### [PRJ] WEB - 
 - [공부] html - css - java - database - backend
 - 생활코딩 참고 - opentutorials
-- NomadCoder?
+- NomadCoder?: 다음 기회에 clone coding free trial로 시도해볼 것.
 
 [구현]
 - login.html / css
@@ -39,6 +39,7 @@ reminiscence.
 - /ongoing/
 - findpw.html / css
 - productexplain.html / css
+- backend : java Server pages
 
 ### 수학
 #### 선형대수학
