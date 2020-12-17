@@ -124,9 +124,8 @@ E – 10816 숫자 카드 2 https://www.acmicpc.net/problem/10816
 
  
 
-문제를 풀기 전에 공부하기: X
-
-학습 유의사항: std::unique와 std::lower_bound와 std::upper_bound를 함께 활용해 개수를 구하는 테크닉은 매우 자주 등장한다. 또한 std::sort의 비교 함수 지정은 반드시 알아두어야 한다.
+문제를 풀기 전에 공부하기: X. 
+학습 유의사항: std::unique와 std::lower_bound와 std::upper_bound를 함께 활용해 개수를 구하는 테크닉은 매우 자주 등장한다. 또한 std::sort의 비교 함수 지정은 반드시 알아두어야 한다.  
 
  
 
