@@ -14,11 +14,11 @@ abraxas.
 ## Certificates
 
 ### 정보처리
-- 2021qnet.pdf
+- [2021 큐넷 계획] (https://github.com/underthelights/underthelights.github.io/blob/main/_posts/certificates/2021qnet.pdf)
 
 #### 정보처리 기능사 (2021)
 기능사 제1회 정기검정 
-- [2021년] (2021.png)
+- ![2021년기능사] (https://raw.githubusercontent.com/underthelights/underthelights.github.io/main/_posts/certificates/2021.png)
 - **필기시험** 
   - 원서접수:  1.12∼1.15 
   - 시험시행:  1.31∼2.6 
