@@ -4,6 +4,7 @@ title: Linear Algebra
 tags: thepurplenote
 category: thepurplenote
 date: 2020-12-27 20:18:00 +08:00
+first_modify_date: 2020-12-27 20:18:00 +08:00
 picture_frame: shadow
 ---
 **Those who do not know math do not know the true beauty of nature. - Richard Feynman**
@@ -26,4 +27,4 @@ abraxas.
 - 공부 진행 
   - 10/14 ~ 11/ : 선형대수학 필기, 고급수학.
   - 11/ ~ 12/ : KAIST 선형대수학개론 초반부 
-  - 11/ ~ 12/ : 프리드버그 선형대수학 문제 풀기
+  - 11/ ~ 12/ : [프리드버그 선형대수학 문제 풀기](2020-12-28-linear_friedberg.md)
