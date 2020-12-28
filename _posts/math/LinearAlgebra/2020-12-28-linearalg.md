@@ -3,8 +3,8 @@ layout: article
 title: Linear Algebra
 tags: thepurplenote
 category: thepurplenote
-date: 2020-12-27 20:18:00 +08:00
-first_modify_date: 2020-12-27 20:18:00 +08:00
+date: 2020-12-28 20:18:00 +08:00
+first_modify_date: 2020-12-28 21:18:00 +08:00
 picture_frame: shadow
 ---
 **Those who do not know math do not know the true beauty of nature. - Richard Feynman**
@@ -27,4 +27,4 @@ abraxas.
 - 공부 진행 
   - 10/14 ~ 11/ : 선형대수학 필기, 고급수학.
   - 11/ ~ 12/ : KAIST 선형대수학개론 초반부 
-  - 11/ ~ 12/ : [프리드버그 선형대수학](2020-12-28-linear_friedberg.md)
+  - 11/ ~ 12/ : [프리드버그 선형대수학](https://underthelights.github.io/thepurplenote%20linearalgebra%20math/2020/12/28/linear_friedberg.html)
