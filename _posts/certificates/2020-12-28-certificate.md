@@ -11,12 +11,12 @@ picture_frame: shadow
 abraxas.
 <!--more-->
 
-## Certificates
+# Certificates
 
-### 정보처리
+## 정보처리
 - [2021 큐넷 계획] (https://github.com/underthelights/underthelights.github.io/blob/main/_posts/certificates/2021qnet.pdf)
 
-#### 정보처리 기능사 (2021)
+### 정보처리 기능사 (2021)
 기능사 제1회 정기검정 
 - ![2021년기능사](2021.png)
 - **필기시험** 
@@ -35,7 +35,7 @@ abraxas.
 - 자격증가산휴가 
   - 알아보기 !!
 
-#### 정보처리 산업기사 
+### 정보처리 산업기사 
 **응시자격 : 기능사 취득 1년 이후, 산업기사 취득  (2022. 5월이후)**
 산업기사 제3회 정기검정 (2022)
 - **필기시험** 
@@ -51,16 +51,25 @@ abraxas.
   - 시험시행:  4.3∼4.21 
   - 합격자발표:   4.30(1차), 5.7(2차)
 
-#### 정보처리 기사
+### 정보처리 기사
 
-#### 정보처리 기술사
+### 정보처리 기술사
 
 
-### 데이터 아키텍트 
-#### DAsP
+## Data Architecture
+### DAsP
+![Data Architecture](DataArchitecture.png)
 
-### SQL
-#### SQLD
+## SQL
+### SQLD
+![SQL certificate](SQL.png)
 
-### 리눅스 마스터 1급 
+## Data Analysis
+: Advanced Data Analytics Semi-Professional
+### ADsP
+![Data Analysis](DataAnalysis.png)
+
+## 리눅스 마스터 1급 
+
+## 빅데이터 분석기사
 
