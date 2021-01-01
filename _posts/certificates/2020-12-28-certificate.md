@@ -11,7 +11,7 @@ picture_frame: shadow
 abraxas.
 <!--more-->
 
-# Certificates
+# 국가공인기술자격
 
 ## 정보처리
 - [2021 큐넷 계획] (https://github.com/underthelights/underthelights.github.io/blob/main/_posts/certificates/2021qnet.pdf)
@@ -129,3 +129,11 @@ abraxas.
 
 * reference
 - https://hellokimcoworld.tistory.com/5?category=876227 
+
+# Cloud
+
+## Google Cloud Platform
+
+### GCP Professional Data Engineer
+- 후기(https://www.youtube.com/watch?fbclid=IwAR3_VWwYTmlHYUr2i6GamtJ0ONtkMzeCtK3BH3CYu0xNgjePDEv2-yllXqg&v=YLtytLrzAIY&feature=youtu.be&ab_channel=SimonKim)
+### GCP Professional Cloud Architect
