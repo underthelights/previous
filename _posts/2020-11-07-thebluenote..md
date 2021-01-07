@@ -1,7 +1,7 @@
 ---
 layout: article
-title: thebluenote
-key: 10009
+title: thebluenote2020
+key: 0
 tags: thebluenote
 category: bluenote
 date: 2020-11-07 09:48:00 +08:00
