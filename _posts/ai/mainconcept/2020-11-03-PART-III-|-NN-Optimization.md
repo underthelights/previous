@@ -1,5 +1,4 @@
-PART III / Optimization for Neural Network​​
-​PART II / Neural Networks
+PART III / Optimization for Neural Network
 [Machine Learning Academy_Part Ⅲ. Neural Networks 최적화]
 1. Overfitting
 √ Supervised Learning을 위한 훈련 데이터
