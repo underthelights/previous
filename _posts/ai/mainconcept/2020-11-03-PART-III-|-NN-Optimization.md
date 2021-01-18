@@ -1,16 +1,12 @@
 PART III / Optimization for Neural Network
 [Machine Learning Academy_Part Ⅲ. Neural Networks 최적화]
+
+
 1. Overfitting
-√ Supervised Learning을 위한 훈련 데이터
-?
-통계에서 좋은 결과를 얻으려면,
-표본조사를 할 때 전체를 대표할 수 있는 우량한 샘플을 취하고,
-그 샘플들로부터 전체를 잘 설명할 수 있는 모델을 만들어야 한다.
-전체를 대표할 수 없는 치우친 샘플을 얻게 되면,
-“장님 코끼리 만지기”처럼 엉뚱한 결과를 초래할 수도 있다.
-마찬가지로 지도학습(supervised learning)을 사용하는 기계학습법에서도
-선택한 학습 알고리즘뿐만 아니라 학습을 위한
-훈련 데이터(training data)의 질에 따라 학습의 결과가 좌우된다.
+- Supervised Learning을 위한 훈련 데이터
+  - 통계에서 좋은 결과를 얻으려면, 표본조사를 할 때 전체를 대표할 수 있는 우량한 샘플을 취하고, 그 샘플들로부터 전체를 잘 설명할 수 있는 모델을 만들어야 한다.
+  - 전체를 대표할 수 없는 치우친 샘플을 얻게 되면, “장님 코끼리 만지기”처럼 엉뚱한 결과를 초래할 수도 있다.
+  - 마찬가지로 지도학습(supervised learning)을 사용하는 기계학습법에서도 선택한 학습 알고리즘뿐만 아니라 학습을 위한 훈련 데이터(training data)의 질에 따라 학습의 결과가 좌우된다.
 ?
 ?
 √ Overfitting
