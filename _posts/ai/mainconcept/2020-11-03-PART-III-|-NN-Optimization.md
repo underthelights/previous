@@ -1,3 +1,19 @@
+---
+layout: article
+title: Part III. Optimization for Neural Network
+key: 0
+tags: ml
+category: ml concept
+date: 2020-11-03 16:48:00 +08:00
+picture_frame: shadow
+---
+Part Ⅱ / Optimization for Neural Network
+
+
+ⓒ [라온피플](https://blog.naver.com/laonple), Stanford cs231n
+
+**fly to the moon.**
+<!--more-->
 PART III / Optimization for Neural Network
 [Machine Learning Academy_Part Ⅲ. Neural Networks 최적화]
 
