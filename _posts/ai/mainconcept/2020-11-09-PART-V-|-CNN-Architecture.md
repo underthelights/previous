@@ -74,209 +74,61 @@ PART V / CNN Architecture​​
 - 처음 LeNet-1을 발표 했을 당시, 입력 영상의 크기는 28x28로 LeNet-5에 비해서 작으며, 1단계 convolution을 통해 얻은 feature-map의 개수도 4개로 작으며 2 단계 convolution에서 얻은 feature-map의 크기도 12개로 작았다. 하지만 sub-sampling을 적용하여 feature-map의 크기를 줄이고, 여러 단계의 convolution을 거치면서 작은 feature에서 좀 더 global한 feature를 얻어가는 과정이나, 의미 있는 global feature를 얻게 되면, 이것을 fully-connected neural network을 classifier로 사용하는 점도 LeNet-5와 동일하다.
 - 여기서 5x5 convolution kernel을 통해 local receptive field의 개념을 적용하였고, 전체 이미지에 대해서 같은 kernel을 적용함으로써 shared weight 개념이 적용되었으며, 가장 큰 자극만을 취하기 위한 max-pooling 을 적용함으로써 sub-sampling이 적용되게 된다. 이들은 이 구조를 완성하고 비교를 통해, fully-connected network나 기타 다른 machine learning 알고리즘을 적용하는 것보다 훨씬 결과가 좋다는 사실에 고무되어, 이 구조를 점차 발전시키게 된다.
 - 이후 이 연구 그룹은 현재의 LeNet-5와 구조적으로 훨씬 유사한 LeNet-4를 거쳐, 최종적으로 LeNet-5를 발표하기에 이른다.
+
 ## 2.2. LeNet-5
-- LeNet-1이 처음 개발될 때는 아무래도 당시의 컴퓨팅 능력이 떨어졌기에
-파라미터의 수가 작은 망을 개발했으리라 생각이 된다.
-개발 후 결과를 보니, 입력 이미지의 크기 및 convolution kernel의 개수를 늘리고
-최종단에 있는 fully-connected layer의 크기도 키우는 방향으로 자연스럽게 연구 흐름이 이어진 것으로 보인다.
-앞서 살펴보았지만, LeNet-5의 구조는 아래 그림과 같다.
-LeNet-1의 구조와 비교를 해보면,
-구조가 상당히 유사하지만 크기가 달라졌다는 것을 알 수가 있다.
-LeNet-1에서는 16x16의 크기로 샘플 이미지의 크기를 줄인 후
-그것을 28x28 크기의 중앙에 위치하도록 하였지만,
-LeNet-5에서는 MNIST의 28x28 test image를 32x32 영상의 중앙에 위치시켜 처리를 하였다.
-아무래도 좀 더 큰 크기의 영상을 사용하기 때문에
-down-size 영상에서보다 영상의 작은 부분(detail)에 대한 고려가 훨씬 많아지고,
-그 결과로서 더 우수한 성능을 얻을 수 있게 된 것이다.
-LeNet-1의 경우는 약 10만번 정도의 multiply/add가 필요하지만,
-free parameter의 숫자는 3000개 이하로 작다.
-이는 20x20 크기의 영상을 입력으로 받고,
-300개의 hidden unit을 갖는 400-300-10 fully connected neural network에서
-free parameter의 개수가 12만개 이상인 것에 비해 훨씬 작다는 것을 알 수 있으며,
-실제 망을 통한 학습의 결과도 LeNet-1이 더 좋다. (논문에서 성능 비교의 수치가 나옴)
-LeNet-5는 앞서 언급한 것처럼 성능 향상을 위해, LeNet-1보다 큰 망을 설계하였다.
-전체적으로 34만개의 connection이 있으며, free parameter의 개수도 약 6만개에 달한다.
-하지만 성능 면에서는 놀랄만한 결과를 보인다.
-실제로 논문에서 여러 알고리즘에 대해 비교한 결과를 보면,
-fully-connected NN에 비해 LeNet-1의 성능이 훨씬 뛰어나고,
-LeNet-5의 결과는 그것보다 더 좋다는 것을 알 수 있다.
-아래 표에서 최고의 결과를 보인 Boosted LeNet-4는 LeNet-4에 대해 3가지 다른 방법으로 학습을 실시하여,
-결과적으로 인위적인 distortion을 통해 training data가 많아지는 것과 같은 효과를 얻게 되었다.
-LeNet-5의 구조를 좀 더 상세하게 살펴보자.
-구조를 나타내는 그림에는 Cx와 Sx 및 Fx가 나온다.
-여기서 C는 convolution, S는 sub-sampling, F는 Fully-connected layer를 의미하며,
-대문자 알파벳 다음에 오는 소문자 x는 layer의 번호를 나타낸다.
-가령 C1은 첫번째 layer이고 convolution을 수행하는 layer 임을 나타낸다.
-비슷하게 F6라면, 6번째 layer이고 fully connect NN 임을 의미한다.
-LeNet-5의 구조는 총 3개의 convolution layer, 2개의 sub-sampling layer 및
-1개의 fully-connected layer를 갖고 있다는 것을 알 수가 있으며,
-convolution뒤에 sub-sampling이어지면서, 영상의 크기가 1/4로 줄어들게 된다.
-C1은 convolutional layer이며 32x32 영상을 입력으로 받아,
-28x28 크기의 feature-map 영상을 만들어 낸다.
-5x5 kernel을 사용하고, zero-padding을 지원하지 않기 때문에
-boundary 정보가 사라지면서 28x28 크기의 feature-map 영상이 나오게 된다.
-Convolution kernel의 계수(parameter)는 사전에 결정되는 것이 아니라,
-최적의 결과를 낼 수 있도록 학습을 통해 결정이 된다.
-C1 단계는 각 convolution kernel에서 (총 26 = 25 +1)의 자유 파라미터가 있고,
-그런 커널이 6개 있기 때문에 총 156개의 자유 파라미터가 있다.
-S2는 sub-sampling을 수행하며, 2x2 크기의 receptive field로부터 average pooling을 수행하기 때문에,
-결과적으로28x28 크기의 feature-map 영상을 입력으로 받아,
-14x14 크기의 출력 영상을 만들어 내며,
-각각의 feature map에 대해 1개의 대응하는 sub-sampling layer가 있다.
-Average pooling을 수행하기 때문에 weight 1 + bias 1 로 각각의 sub-sampling layer는 2개의 파라미터를 갖고,
-자유 파라미터의 개수는 총 12개 있다.
-C3는 C1과 동일한 크기의 5x5 convolution을 수행하며,
-14x14 입력 영상을 받아 10x10 크기의 출력 영상을 만들어 낸다.
-6개의 입력 영상으로부터 16개의 convolution 영상을 만들어 내는데,
-이 때 6개의 모든 입력 영상이 16개의 모든 출력 영상에 연결이 되는 것이 아니라,
-아래의 테이블과 같이 선택적으로 입력 영상을 골라, 출력 영상에 반영이 될 수 있도록 한다.
-이렇게 하는 이유는 연산량의 크기를 줄이려는 이유도 있지만,
-결정적인 이유는 연결의 symmetry를 깨줌으로써,
-처음 convolution으로부터 얻은 6개의 low-level feature가 서로 다른 조합으로 섞이면서
-global feature로 나타나기를 기대하기 때문이다.
-이 단계의 자유 파라미터의 개수는 1516개이다.
-이는 25(커널) x 60(S2의 feature map과 C3의 convolution에 대한 연결) + 16(bias)의 결과이다.
-S4는 S2와 마찬가지로 sub-sampling 단계이며,
-10x10 feature-map 영상을 받아 5x5 출력 영상을 만들며, 이 단계의 자유 파라미터의 개수는 32(2x16)개 이다.
-C5는 단계는 16개의 5x5 영상을 받아, 5x5 kernel 크기의 convolution을 수행하기 때문에
-출력은 1x1 크기의 feature-map이며,
-이것들을 fully connected의 형태로 연결하여 총 120개의 feature map을 생성한다.
-이전 단계에서 얻어진 16개의 feature-map이 convolution을 거치면서 다시 전체적으로 섞이는 결과를 내게 된다.
-F6는 fully-connected이며 C5의 결과를 84개의 unit에 연결을 시킨다.
-자유 파라미터의 개수는 (120+1)x84 = 10164가 된다.
-입력 영상에 대해, 각각의 단계별 영상은 아래 그림과 같다.
-단계별 영상을 보면,
-LeNet-5의 각각의 layer에서 어떤 결과를 도출해내는지 알 수가 있으며,
-topology 변화나 잡음에 대한 내성이 상당히 강함을 알 수가 있다.
-이번 class는 LeNet-5의 구조에 대해서 알아보았다.
-그리 복잡하지 않은 망을 이용하여 놀랄만한 성과를 얻을 수 있음이 확인이 되었다.
-다음 class에서는 AlexNet에 대해 상세하게 살펴보기로 한다.
+
+- LeNet-1이 처음 개발될 때는 아무래도 당시의 컴퓨팅 능력이 떨어졌기에 파라미터의 수가 작은 망을 개발했으리라 생각이 된다. 개발 후 결과를 보니, 입력 이미지의 크기 및 convolution kernel의 개수를 늘리고 최종단에 있는 fully-connected layer의 크기도 키우는 방향으로 자연스럽게 연구 흐름이 이어진 것으로 보인다.
+- 앞서 살펴보았지만, LeNet-5의 구조는 아래 그림과 같다. LeNet-1의 구조와 비교를 해보면, 구조가 상당히 유사하지만 크기가 달라졌다는 것을 알 수가 있다. LeNet-1에서는 16x16의 크기로 샘플 이미지의 크기를 줄인 후 그것을 28x28 크기의 중앙에 위치하도록 하였지만, LeNet-5에서는 MNIST의 28x28 test image를 32x32 영상의 중앙에 위치시켜 처리를 하였다. 아무래도 좀 더 큰 크기의 영상을 사용하기 때문에 down-size 영상에서보다 영상의 작은 부분(detail)에 대한 고려가 훨씬 많아지고, 그 결과로서 더 우수한 성능을 얻을 수 있게 된 것이다. LeNet-1의 경우는 약 10만번 정도의 multiply/add가 필요하지만, free parameter의 숫자는 3000개 이하로 작다. 이는 20x20 크기의 영상을 입력으로 받고, 300개의 hidden unit을 갖는 400-300-10 fully connected neural network에서 free parameter의 개수가 12만개 이상인 것에 비해 훨씬 작다는 것을 알 수 있으며, 실제 망을 통한 학습의 결과도 LeNet-1이 더 좋다. (논문에서 성능 비교의 수치가 나옴) LeNet-5는 앞서 언급한 것처럼 성능 향상을 위해, LeNet-1보다 큰 망을 설계하였다. 전체적으로 34만개의 connection이 있으며, free parameter의 개수도 약 6만개에 달한다.
+- 하지만 성능 면에서는 놀랄만한 결과를 보인다. 실제로 논문에서 여러 알고리즘에 대해 비교한 결과를 보면, fully-connected NN에 비해 LeNet-1의 성능이 훨씬 뛰어나고, LeNet-5의 결과는 그것보다 더 좋다는 것을 알 수 있다. 아래 표에서 최고의 결과를 보인 Boosted LeNet-4는 LeNet-4에 대해 3가지 다른 방법으로 학습을 실시하여, 결과적으로 인위적인 distortion을 통해 training data가 많아지는 것과 같은 효과를 얻게 되었다.
+- LeNet-5의 구조를 좀 더 상세하게 살펴보자. 
+  - 구조를 나타내는 그림에는 Cx와 Sx 및 Fx가 나온다. 여기서 C는 convolution, S는 sub-sampling, F는 Fully-connected layer를 의미하며, 대문자 알파벳 다음에 오는 소문자 x는 layer의 번호를 나타낸다. 가령 C1은 첫번째 layer이고 convolution을 수행하는 layer 임을 나타낸다. 비슷하게 F6라면, 6번째 layer이고 fully connect NN 임을 의미한다. LeNet-5의 구조는 총 3개의 convolution layer, 2개의 sub-sampling layer 및 1개의 fully-connected layer를 갖고 있다는 것을 알 수가 있으며, convolution뒤에 sub-sampling이어지면서, 영상의 크기가 1/4로 줄어들게 된다. C1은 convolutional layer이며 32x32 영상을 입력으로 받아, 28x28 크기의 feature-map 영상을 만들어 낸다. 5x5 kernel을 사용하고, zero-padding을 지원하지 않기 때문에 boundary 정보가 사라지면서 28x28 크기의 feature-map 영상이 나오게 된다. Convolution kernel의 계수(parameter)는 사전에 결정되는 것이 아니라, 최적의 결과를 낼 수 있도록 학습을 통해 결정이 된다.
+  - C1 단계는 각 convolution kernel에서 (총 26 = 25 +1)의 자유 파라미터가 있고, 그런 커널이 6개 있기 때문에 총 156개의 자유 파라미터가 있다.
+  - S2는 sub-sampling을 수행하며, 2x2 크기의 receptive field로부터 average pooling을 수행하기 때문에, 결과적으로28x28 크기의 feature-map 영상을 입력으로 받아, 14x14 크기의 출력 영상을 만들어 내며, 각각의 feature map에 대해 1개의 대응하는 sub-sampling layer가 있다. Average pooling을 수행하기 때문에 weight 1 + bias 1 로 각각의 sub-sampling layer는 2개의 파라미터를 갖고, 자유 파라미터의 개수는 총 12개 있다. 
+  - C3는 C1과 동일한 크기의 5x5 convolution을 수행하며, 14x14 입력 영상을 받아 10x10 크기의 출력 영상을 만들어 낸다. 6개의 입력 영상으로부터 16개의 convolution 영상을 만들어 내는데, 이 때 6개의 모든 입력 영상이 16개의 모든 출력 영상에 연결이 되는 것이 아니라, 아래의 테이블과 같이 선택적으로 입력 영상을 골라, 출력 영상에 반영이 될 수 있도록 한다. 이렇게 하는 이유는 연산량의 크기를 줄이려는 이유도 있지만,
+결정적인 이유는 연결의 symmetry를 깨줌으로써, 처음 convolution으로부터 얻은 6개의 low-level feature가 서로 다른 조합으로 섞이면서 global feature로 나타나기를 기대하기 때문이다. 이 단계의 자유 파라미터의 개수는 1516개이다. 이는 25(커널) x 60(S2의 feature map과 C3의 convolution에 대한 연결) + 16(bias)의 결과이다.
+  - S4는 S2와 마찬가지로 sub-sampling 단계이며, 10x10 feature-map 영상을 받아 5x5 출력 영상을 만들며, 이 단계의 자유 파라미터의 개수는 32(2x16)개 이다. C5는 단계는 16개의 5x5 영상을 받아, 5x5 kernel 크기의 convolution을 수행하기 때문에 출력은 1x1 크기의 feature-map이며, 이것들을 fully connected의 형태로 연결하여 총 120개의 feature map을 생성한다. 이전 단계에서 얻어진 16개의 feature-map이 convolution을 거치면서 다시 전체적으로 섞이는 결과를 내게 된다. 
+  - F6는 fully-connected이며 C5의 결과를 84개의 unit에 연결을 시킨다. 자유 파라미터의 개수는 (120+1)x84 = 10164가 된다. 입력 영상에 대해, 각각의 단계별 영상은 아래 그림과 같다. 단계별 영상을 보면, LeNet-5의 각각의 layer에서 어떤 결과를 도출해내는지 알 수가 있으며, topology 변화나 잡음에 대한 내성이 상당히 강함을 알 수가 있다.
+- 이번 class는 LeNet-5의 구조에 대해서 알아보았다. 그리 복잡하지 않은 망을 이용하여 놀랄만한 성과를 얻을 수 있음이 확인이 되었다. 다음 class에서는 AlexNet에 대해 상세하게 살펴보기로 한다.
 
 # 3. AlexNet [1]
-AlexNet ?
-ImageNet 영상 데이터 베이스를 기반으로 한
-"ILSVRC(ImageNet Large Scale Visual Recognition Challenge) - 2012" 우승은
-캐나다의 토론토 대학이 차지한다.
-당시 논문의 첫번째 저자가 바로 Alex Khrizevsky이며,
-그의 이름을 따, 그들이 개발한 CNN 구조를 AlexNet이라고 부른다.
-아래 그림의 SuperVision은 AlexNet을 의미한다.
-결과에서도 알 수 있듯이 압도적인 성능으로 1위를 하게 되어 크게 주목을 받게 되었고,
-그 이후 매년 참가자들은 AlexNet의 결과에 고무되어 더 좋은 성능을 보이게 되며,
-당장 그 이듬 해에 치러진 ILSVRC-2013에서는 대부분의 참가자들이 AlexNet보다 좋은 결과를 낸다.
-AlexNet은 구조적 관점에서 보았을 때, LeCun의 LeNet5와 크게 다르지는 않지만,
-높은 성능을 얻기 위해, 꽤 여러 곳에 상당한 고려가 들어가 있으며,
-특히 GPU를 사용하여 매우 의미 있는 결과를 얻었기 때문에
-이후 연구자들은 CNN 구조를 설계할 때 GPU를 사용하는 것이 대세가 되었다.
-이세돌 9단과 세기의 대결을 벌인 구글(딥마인드)의 알파고(distributed model) 역시,
-1920개의 CPU와 280개의 GPU를 병렬적으로 사용한다.
-이번 class에서는 2012년에 발표된
-“ImageNet Classification with Deep Convolutional Neural Networks” 논문을 기본으로,
-AlexNet이 성능을 올리기 위해 구조적으로 어떤 점을 고려하였는지 살펴보기로 한다.
-AlexNet ? 기본 구조
-AlexNet의 기본 구조는 아래 그림과 같으며,
-전체적으로 보면 2개의 GPU를 기반으로 한 병렬 구조인 점을 제외하면, LeNet5와 크게 다르지 않음을 알 수 있다.
-AlexNet은 총 5개의 convolution layers와 3개의 full-connected layers로 구성이 되어 있으며,
-맨 마지막 FC layer는 1000개의 category로 분류를 위해 활성 함수로 softmax 함수를 사용하고 있음을 알 수 있다.
-AlexNet은 약 65만개의 뉴런, 6000만개의free parameter 및 6억3000만개의 connection으로
-구성된 방대한 CNN구조를 갖고 있으며,
-이렇게 방대한 망에 대한 학습을 위해 2개의 GPU를 사용하고 있다.
-당시에 사용한 GPU는 엔비디아 社에서 나온 GTX580을 사용했다.
-GTX580은 3GB의 메모리를 갖고 있기 때문에, 망의 구조를 결정하는데도 3GB의 메모리 한계에 맞춰 하였다.
-이후에 발표된 GTX Titan X 같은 GPGPU processor를 사용하면, 더욱 더 발전된 구조를 설계할 수 있었을 것 같다.
-아래 그림은 엔비디아 사가 밝힌 자신들의 GPU 상대 성능을 비교한 것이며,
-GTX580 대비 높은 성능을 보이는 모델이 많이 있음을 알 수 있다.
-AlexNet ? 세부 블록
-AlexNet의 블록도를 이해하려면,
-CNN은 아래 그림과 같이 3차원 구조를 갖는다는 것을 이해해야 한다.
-영상의 크기를 나타내는 width와 height 뿐만 아니라 depth를 갖는다.
-보통 color 영상의 경우는 R/G/B 3개의 성분을 갖기 때문에 시작이 3 이지만,
-convolution을 거치면서 feature-map이 만들어지고 이것에 따라 중간 영상의 depth가 달라진다.
-이것을 이해하면, AlexNet의 블록도에 있는 숫자의 의미가 파악이 가능하다.
-LeNet의 경우는 입력 영상의 크기가 32 x 32로 작았기 때문에
-모든 convolutional layer는 동일하게 5 x 5 크기를 갖는 kernel을 사용했다.
-입력 영상도 흑백 영상이기 때문에 최초의 depth는 1이고,
-이것이 convolution을 거치면서 depth가 증가하게 된다.
-하지만 AlexNet의 경우는 입력 영상의 크기가 227 x 227 x 3으로 영상의 크기가 매우 크기 때문에,
-첫번째 convolutional layer의 kernel의 크기가 11 x 11 x 3 크기로 비교적 큰 receptive field를 사용하고 있다.
-첫번째 convolutional layer에서는 stride의 크기를 4를 적용하였으며,
-96개의 feature-map을 생성하기 때문에 결과는 55 x 55 x 96이 된다.
-AlexNet의 첫번째 convolutional layer는 55 x 55 x 96 = 290,400개의 neuron으로,
-각 kernel은 11 x 11 x 3 = 363개의 weight 및 1개의 bias를 변수로 갖기 때문에  kernel 당 364개의 parameter이고,
-kernel이 96개이므로 364 x 96 = 34,944의 free parameter (LeNet 전체의 절반이상),
-connection의 숫자도 290,400 x 364 = 105,750,600으로
-첫번째 layer에서만 1억개 이상의 connection이 만들어진다.
-첫번째 convolutional layer를 거치게 되면, 96개의 feature-map을 얻을 수 있으며,
-GPU-1에서는 주로 컬러와 상관없는 정보를 추출하기 위한 kernel이 학습이 되고,
-GPU-2에서는 주로 color에 관련된 정보를 추출하기 위한 kernel이 학습이 된다.
-두번째 convolutional layer는 5 x 5 x 48 크기를 갖는 kernel을 사용하고 있으며,
-첫번째 convolutional layer 뒤에 바로 두번째 convolutional layer가 오는 점이 다르다.
-이는 [Part Ⅳ. CNN] 3. convolution Layer [1] 에서 살펴본 것처럼,
-?첫번째 convolutional layer에서 연산의 수를 줄이기 위해 stride를 1로 하지 않고,
-4로 적용을 했기 때문에 자연스럽게 pooling을 한 것처럼 영상의 크기가 줄어 들었기 때문이다.
-세번째 convolutional layer 연산을 하기 전에 response normalization과 pooling 과정을 거쳐
-영상의 크기를 27 x 27 x 256으로 줄어들게 되며,
-3 x 3 x 256 크기를 갖는 kernel을 사용하여 convolution연산을 수행하고 384개의 feature-map을 얻는다.
-이 때 GPU-1과 GPU-2의 결과를 모두 섞어 사용을 한다.
-그 결과에 대해 response normalization과 pooling을 거쳐 13 x 13 x 384크기의 영상을 얻으며,
-그 결과에 대해 4번/5번 convolution이 블락도와 같이 적용이 된다.
-최종 convolution을 거친 영상은 pooling 과정을 거쳐 총 4096개의 fully connected net에 연결이 되고,
-최종단은 1000개의 category에서 결과를 낼 수 있도록 softmax 함수가 적용이 된다.
-AlexNet ? 성능 개선을 위한 고려 (ReLU)
-AlexNet이 성능 향상을 위해 좀 더 고려한 부분은
-ReLU, overlapped pooling, response normalization, dropout 및 2개의 GPU 사용이라고 볼 수 있다.
-이들에 대한 상세한 내용은 내용이 길어질 것 같아,
-이번 class에서는 ReLU에 대해서만 살펴보고, 나머지는 다음 class에서 살펴볼 예정이다.
-앞서 신경망을 처음 설명하면서,
-신경망의 활성함수로는 biological neuron을 모델링하기 위한 nonlinear 활성함수로
-sigmoid 함수를 사용한다는 것을 설명하였다.
-하지만 sigmoid 함수는 hyperbolic-tangent 함수인 tanh에 비해서 학습 속도가 느리며,
-hyperbolic-tangent 함수 tanh 역시 학습 속도가 느린 문제가 있다.
-망의 크기가 작을 때는 그 차이가 심각하지 않지만,
-AlexNet과 같이 망의 크기가 엄청나게 큰 경우는 학습 속도에 치명적인 영향을 준다.
-Xavier Glorot 등이 쓴 논문 “Deep Sparse Rectifier Nerual Network”에 자세한 내용이 있으니 참고하면 좋을 것 같다.
-그래서 논문에서는 활성함수로 ReLU(Rectified Linear Unit)을 사용했다.
-이는 전자공학에서 반파정류 회로와 비슷한 개념이며,
-0에서 미분이 안 되는 문제가 있기는 하지만,
-학습속도가 탁월하고 back-propagation 결과도 매우 단순하기 때문에
-요즘 Deep Neural Network에서는 거의 ReLU를 선호하고 있다.
-논문에서도 실제 실험 결과가 나오는데,
-학습속도가 sigmoid나 tanh를 사용했을 때에 비해 학습 속도가 6배 정도 빨라지는 것을 볼 수 있다.
-ImageNet에는 엄청난 수의 학습 이미지가 있기 때문에 고속으로 학습을 하기 위해서는 ReLU를 선택하였다.
-이후에도 여러 논문들에서 자신들의 CNN 망에서 1장의 이미지를 학습하는데 걸리는 시간을 밝히고 있다.
-1장의 영상을 학습시키는데 1ms 정도씩만 더 걸리더라도, 수천만장의 영상을 학습시킬 때 걸리는 시간은
-엄청나게 벌어질 수 있다. 그러므로 활성 함수의 선택은 매우 중요하다.
-이번 class는 AlexNet의 기본 구조에 대해서 살펴보았다.
-다음 class에서는 AlexNet에서 성능을 개선하기 위해 적용된 부분이 어떤 의미가 있는지 상세하게 살펴볼 예정이다.
-​
-​
-4. Maxout
-[Machine Learning Academy_Part Ⅴ. Best CNN Architecture]
-3. AlexNet [2]
-AlexNet의 설계자가 성능 향상을 위해 좀 더 고려한 부분은
-ReLU, overlapped pooling, response normalization, data augmentation, dropout 및
-2개의 GPU 사용이라고 볼 수 있다.
-지난 class에서는 위항목들 중 ReLU에 대해서만 살펴보았다.
-이번 class에서는 나머지 부분에 대해 살펴볼 예정이다.
-Overlapped Pooling
-CNN의 구조에서 일반적으로 pooling은 convolution을 통해 얻은
-feature-map 영상의 크기를 줄이기 위한 용도로 사용하며,
-average pooling 또는 max pooling을 사용한다.
-average pooling은 pooling window 내에 있는 픽셀들의 평균을 취하는 방식이고,
-max pooling은 window에서 최대값을 갖는 픽셀을 선택한다.
-max pooling은 average pooling에 비해 최대값을 구해야 하기 때문에 연산량이 더 많지만,
-최대 크기를 갖는 자극만 전달한다는 관점에서 보면,
-생물학적인 특성과 좀 더 유사하다고 볼 수 있다.
-LeNet-5에서는 average pooling 방식을 사용했지만,
-AlexNet에서는 max pooling을 사용하였으며,
-아래 그림의 화살표 영역이 pooling layer에 해당된다.
-통상적으로 pooling을 할 때는 겹치는 부분이 없게 하는 것이 대부분이며,
-pooling window의 크기도 2x2를 주로 사용하고,
-건너뛰기(stride)도 2를 사용하기 때문에 출력 영상의 크기가 가로/세로 각각 1/2로 줄어들게 된다.
-하지만 AlexNet은 2x2 윈도우 대신 3x3 window를 선택하고,
-건너 뛰기를 2로 하는 overlapped pooling 방식을 사용했다.
-이 overlapped pooling 방식을 통해 top-1과 top-5 에러율을 각각 0.4%와 0.3% 줄일 수 있었으며,
+
+- ImageNet 영상 데이터 베이스를 기반으로 한 "ILSVRC(ImageNet Large Scale Visual Recognition Challenge) - 2012" 우승은 캐나다의 토론토 대학이 차지한다. 당시 논문의 첫번째 저자가 바로 Alex Khrizevsky이며, 그의 이름을 따, 그들이 개발한 CNN 구조를 AlexNet이라고 부른다.
+- 아래 그림의 SuperVision은 AlexNet을 의미한다. 결과에서도 알 수 있듯이 압도적인 성능으로 1위를 하게 되어 크게 주목을 받게 되었고, 그 이후 매년 참가자들은 AlexNet의 결과에 고무되어 더 좋은 성능을 보이게 되며, 당장 그 이듬 해에 치러진 ILSVRC-2013에서는 대부분의 참가자들이 AlexNet보다 좋은 결과를 낸다. AlexNet은 구조적 관점에서 보았을 때, LeCun의 LeNet5와 크게 다르지는 않지만, 높은 성능을 얻기 위해, 꽤 여러 곳에 상당한 고려가 들어가 있으며, 특히 GPU를 사용하여 매우 의미 있는 결과를 얻었기 때문에 이후 연구자들은 CNN 구조를 설계할 때 GPU를 사용하는 것이 대세가 되었다. 이세돌 9단과 세기의 대결을 벌인 구글(딥마인드)의 알파고(distributed model) 역시, 1920개의 CPU와 280개의 GPU를 병렬적으로 사용한다.
+- 이번 class에서는 2012년에 발표된 “ImageNet Classification with Deep Convolutional Neural Networks” 논문을 기본으로, AlexNet이 성능을 올리기 위해 구조적으로 어떤 점을 고려하였는지 살펴보기로 한다.
+
+## 3.1. AlexNet 기본 구조
+- AlexNet의 기본 구조는 아래 그림과 같으며, 전체적으로 보면 2개의 GPU를 기반으로 한 병렬 구조인 점을 제외하면, LeNet5와 크게 다르지 않음을 알 수 있다.
+- AlexNet은 총 5개의 convolution layers와 3개의 full-connected layers로 구성이 되어 있으며, 맨 마지막 FC layer는 1000개의 category로 분류를 위해 활성 함수로 softmax 함수를 사용하고 있음을 알 수 있다.
+- AlexNet은 약 65만개의 뉴런, 6000만개의free parameter 및 6억3000만개의 connection으로 구성된 방대한 CNN구조를 갖고 있으며, 이렇게 방대한 망에 대한 학습을 위해 2개의 GPU를 사용하고 있다. 당시에 사용한 GPU는 엔비디아 社에서 나온 GTX580을 사용했다. GTX580은 3GB의 메모리를 갖고 있기 때문에, 망의 구조를 결정하는데도 3GB의 메모리 한계에 맞춰 하였다.
+- 이후에 발표된 GTX Titan X 같은 GPGPU processor를 사용하면, 더욱 더 발전된 구조를 설계할 수 있었을 것 같다. 아래 그림은 엔비디아 사가 밝힌 자신들의 GPU 상대 성능을 비교한 것이며, GTX580 대비 높은 성능을 보이는 모델이 많이 있음을 알 수 있다.
+
+## 3.2. AlexNet Details
+
+- AlexNet의 블록도를 이해하려면, CNN은 아래 그림과 같이 3차원 구조를 갖는다는 것을 이해해야 한다. 영상의 크기를 나타내는 width와 height 뿐만 아니라 depth를 갖는다. 보통 color 영상의 경우는 R/G/B 3개의 성분을 갖기 때문에 시작이 3 이지만, convolution을 거치면서 feature-map이 만들어지고 이것에 따라 중간 영상의 depth가 달라진다. 이것을 이해하면, AlexNet의 블록도에 있는 숫자의 의미가 파악이 가능하다.
+- LeNet의 경우는 입력 영상의 크기가 32 x 32로 작았기 때문에 모든 convolutional layer는 동일하게 5 x 5 크기를 갖는 kernel을 사용했다. 입력 영상도 흑백 영상이기 때문에 최초의 depth는 1이고, 이것이 convolution을 거치면서 depth가 증가하게 된다. 하지만 AlexNet의 경우는 입력 영상의 크기가 227 x 227 x 3으로 영상의 크기가 매우 크기 때문에, 첫번째 convolutional layer의 kernel의 크기가 11 x 11 x 3 크기로 비교적 큰 receptive field를 사용하고 있다.
+  - 첫번째 convolutional layer에서는 stride의 크기를 4를 적용하였으며, 96개의 feature-map을 생성하기 때문에 결과는 55 x 55 x 96이 된다. AlexNet의 첫번째 convolutional layer는 55 x 55 x 96 = 290,400개의 neuron으로, 각 kernel은 11 x 11 x 3 = 363개의 weight 및 1개의 bias를 변수로 갖기 때문에  kernel 당 364개의 parameter이고, kernel이 96개이므로 364 x 96 = 34,944의 free parameter (LeNet 전체의 절반이상), connection의 숫자도 290,400 x 364 = 105,750,600으로 첫번째 layer에서만 1억개 이상의 connection이 만들어진다. 첫번째 convolutional layer를 거치게 되면, 96개의 feature-map을 얻을 수 있으며, GPU-1에서는 주로 컬러와 상관없는 정보를 추출하기 위한 kernel이 학습이 되고, GPU-2에서는 주로 color에 관련된 정보를 추출하기 위한 kernel이 학습이 된다.
+  - 두번째 convolutional layer는 5 x 5 x 48 크기를 갖는 kernel을 사용하고 있으며, 첫번째 convolutional layer 뒤에 바로 두번째 convolutional layer가 오는 점이 다르다. 이는 [Part Ⅳ. CNN] 3. convolution Layer [1] 에서 살펴본 것처럼, 첫번째 convolutional layer에서 연산의 수를 줄이기 위해 stride를 1로 하지 않고, 4로 적용을 했기 때문에 자연스럽게 pooling을 한 것처럼 영상의 크기가 줄어 들었기 때문이다. 세번째 convolutional layer 연산을 하기 전에 response normalization과 pooling 과정을 거쳐 영상의 크기를 27 x 27 x 256으로 줄어들게 되며, 3 x 3 x 256 크기를 갖는 kernel을 사용하여 convolution연산을 수행하고 384개의 feature-map을 얻는다. 이 때 GPU-1과 GPU-2의 결과를 모두 섞어 사용을 한다. 그 결과에 대해 response normalization과 pooling을 거쳐 13 x 13 x 384크기의 영상을 얻으며, 그 결과에 대해 4번/5번 convolution이 블락도와 같이 적용이 된다.
+- 최종 convolution을 거친 영상은 pooling 과정을 거쳐 총 4096개의 fully connected net에 연결이 되고, 최종단은 1000개의 category에서 결과를 낼 수 있도록 softmax 함수가 적용이 된다.
+
+## 3.3. AlexNet 성능 개선을 위한 고려 (ReLU)
+- AlexNet이 성능 향상을 위해 좀 더 고려한 부분은 ReLU, overlapped pooling, response normalization, dropout 및 2개의 GPU 사용이라고 볼 수 있다. 이들에 대한 상세한 내용은 내용이 길어질 것 같아, 이번 class에서는 ReLU에 대해서만 살펴보고, 나머지는 다음 class에서 살펴볼 예정이다.
+- 앞서 신경망을 처음 설명하면서, 신경망의 활성함수로는 biological neuron을 모델링하기 위한 nonlinear 활성함수로 sigmoid 함수를 사용한다는 것을 설명하였다.
+- 하지만 sigmoid 함수는 hyperbolic-tangent 함수인 tanh에 비해서 학습 속도가 느리며, hyperbolic-tangent 함수 tanh 역시 학습 속도가 느린 문제가 있다. 망의 크기가 작을 때는 그 차이가 심각하지 않지만, AlexNet과 같이 망의 크기가 엄청나게 큰 경우는 학습 속도에 치명적인 영향을 준다. Xavier Glorot 등이 쓴 논문 “[Deep Sparse Rectifier Nerual Network](https://deeplearningworkshopnips2010.files.wordpress.com/2010/11/nipswrkshp2010-cameraready.pdf)”에 자세한 내용이 있으니 참고하면 좋을 것 같다.
+- 그래서 논문에서는 활성함수로 ReLU(Rectified Linear Unit)을 사용했다. 이는 전자공학에서 반파정류 회로와 비슷한 개념이며, 0에서 미분이 안 되는 문제가 있기는 하지만, 학습속도가 탁월하고 back-propagation 결과도 매우 단순하기 때문에 요즘 Deep Neural Network에서는 거의 ReLU를 선호하고 있다. 논문에서도 실제 실험 결과가 나오는데, 학습속도가 sigmoid나 tanh를 사용했을 때에 비해 학습 속도가 6배 정도 빨라지는 것을 볼 수 있다. ImageNet에는 엄청난 수의 학습 이미지가 있기 때문에 고속으로 학습을 하기 위해서는 ReLU를 선택하였다. 이후에도 여러 논문들에서 자신들의 CNN 망에서 1장의 이미지를 학습하는데 걸리는 시간을 밝히고 있다. 1장의 영상을 학습시키는데 1ms 정도씩만 더 걸리더라도, 수천만장의 영상을 학습시킬 때 걸리는 시간은 엄청나게 벌어질 수 있다. 그러므로 활성 함수의 선택은 매우 중요하다.
+- 이번 class는 AlexNet의 기본 구조에 대해서 살펴보았다. 다음 class에서는 AlexNet에서 성능을 개선하기 위해 적용된 부분이 어떤 의미가 있는지 상세하게 살펴볼 예정이다.
+
+# 3. AlexNet [2]
+- AlexNet의 설계자가 성능 향상을 위해 좀 더 고려한 부분은 ReLU, overlapped pooling, response normalization, data augmentation, dropout 및 2개의 GPU 사용이라고 볼 수 있다. 지난 class에서는 위항목들 중 ReLU에 대해서만 살펴보았다. 이번 class에서는 나머지 부분에 대해 살펴볼 예정이다.
+
+## 3.4. Overlapped Pooling
+
+- CNN의 구조에서 일반적으로 pooling은 convolution을 통해 얻은 feature-map 영상의 크기를 줄이기 위한 용도로 사용하며, average pooling 또는 max pooling을 사용한다.
+  - average pooling은 pooling window 내에 있는 픽셀들의 평균을 취하는 방식이고,
+  - max pooling은 window에서 최대값을 갖는 픽셀을 선택한다. max pooling은 average pooling에 비해 최대값을 구해야 하기 때문에 연산량이 더 많지만, 최대 크기를 갖는 자극만 전달한다는 관점에서 보면, 생물학적인 특성과 좀 더 유사하다고 볼 수 있다. LeNet-5에서는 average pooling 방식을 사용했지만, AlexNet에서는 max pooling을 사용하였으며, 아래 그림의 화살표 영역이 pooling layer에 해당된다. 통상적으로 pooling을 할 때는 겹치는 부분이 없게 하는 것이 대부분이며, pooling window의 크기도 2x2를 주로 사용하고, 건너뛰기(stride)도 2를 사용하기 때문에 출력 영상의 크기가 가로/세로 각각 1/2로 줄어들게 된다.
+- 하지만 AlexNet은 2x2 윈도우 대신 3x3 window를 선택하고, 건너 뛰기를 2로 하는 overlapped pooling 방식을 사용했다. 이 overlapped pooling 방식을 통해 top-1과 top-5 에러율을 각각 0.4%와 0.3% 줄일 수 있었으며,
 overfitting에 빠질 가능성도 더 줄일 수 있다고 주장을 하고 있다.
-Local Response Normalization
+
+## Local Response Normalization
 활성함수로 sigmoid나 tanh를 쓰는 것보다 ReLU를 쓰게 되면,
 학습속도를 줄일 수 있고,
 back propagation이 간단해지는 이점에 대해서는 지난 class에서 설명하였다.
@@ -376,8 +228,7 @@ AlexNet의 주 개발자인 Krizhevsky는 토론토 대학을 졸업하고 구�
 요즘의 Deep CNN은 크게 2개로 구성이 되었다고 볼 수 있다.
 l  전체 연산량의 90~95%를 차지하지만, free parameter의 개수는 5% 정도인 convolutional layer
 l  전체 연산량의 5~10%를 차지하지만, free parameter의 개수는 95% 정도인 fully connected layer
-?
-?
+
 여기서, convolutional layer는 앞선 class에서도 살펴보았듯이,
 입력 이미지에 대해서 픽셀의 위치를 옮겨가면서 반복적으로 matrix multiplication이 필요하며,
 여러 개의 입력 feature-map으로부터 동일한 parameter를 갖는 filter 연산을 해야 되기 때문에
@@ -447,16 +298,10 @@ CNN 학습을 통해서 얻어진 결과라는 점이 더욱 고무적이다.
 이는 CNN을 아주 복잡한 일반 영상에 대해서도,
 학습의 양이 충분하다면, 그리고 좋은 CNN 구조를 갖는다면,
 충분히 좋은 결과를 낼 수 있다는 가능성을 보여줬다는 점에서 매우 큰 의미를 갖는 것 같다.
-GPU를 사용한 CNN은 아직 뜨겁게 연구가 되고 있는 분야라서,
-짧은 지면으로 전부 소개를 한다는 것은 말이 안 되는 것 같다.
-하지만, 지금은 Best CNN 구조가 어떻게 변하고 있는지를 살펴보는 단계이니,
-이 정도로 간단히 소개를 하고, CNN 구조에 대한 비교가 끝나면,
-따로 자세히 GPU, CUDA, cuDNN, GPU를 이용한 병렬 컴퓨팅 등을 살펴보기로 하자.
-다음 class에서는 ZFNet의 구조에 대하여 살펴볼 예정이다.
-​
-​
-[Machine Learning Academy_Part Ⅴ. Best CNN Architecture]
-4. ZFNet [1]
+
+- GPU를 사용한 CNN은 아직 뜨겁게 연구가 되고 있는 분야라서, 짧은 지면으로 전부 소개를 한다는 것은 말이 안 되는 것 같다. 하지만, 지금은 Best CNN 구조가 어떻게 변하고 있는지를 살펴보는 단계이니, 이 정도로 간단히 소개를 하고, CNN 구조에 대한 비교가 끝나면, 따로 자세히 GPU, CUDA, cuDNN, GPU를 이용한 병렬 컴퓨팅 등을 살펴보기로 하자. 다음 class에서는 ZFNet의 구조에 대하여 살펴볼 예정이다.
+
+# 4. ZFNet [1]
 AlexNet 이후의 후속 연구와 ZFNet
 2012년 ILSVRC를 우승한 AlexNet 에 대한 소식은
 관련 분야의 연구자들에게는 엄청난 자극과 희망을 가져다 주게 된다.
@@ -1640,7 +1485,9 @@ GoogLeNet 팀 역시 같은 해 발표된 VGGNet의 개념을 발전된 방식�
 비록 Inception-V3구조로 무장을 하고 2015년 ILSVRC 대회에 참가하지는 않았지만, 그 해 우승을 한 ResNet 성능에 근접하는 성능을 내게 된다. 논문에 따르면multi-model & multi-crop ensemble에서 top-5 에러율이 3.58% 수준에 도달하게 된다. (논문: Rethinking the Inception Architecture for Computer Vision). 논문 발표를 통해 자신들이 발전시킨 구조 역시 성능이 뛰어남을 입증하는 ‘뒤끝 정신’을 보인다.
 한편, 2015년에 마이크로소프트팀이 발표한 ResNet 구조는 여러 면에서 혁신적인 구조라서 GoogLeNet 팀도 많은 검토를 한 것 같다. 그들이 2016년에 발표한 논문 “Inception-V4, Inception-ResNet and the Impact of Residual Connections on Learning”에 따르면, 일부는 ResNet 팀의 아이디어에 긍정을 하지만, 일부는 꼭 그렇지 않다고 언급하고 있다. 자신들이 개선시킨 Inception-V4 구조를 통해서도 ResNet 구조를 사용하지 않더라도 ultra-scale 딥러닝이 가능함을 밝힌다. 또한 자신들의 Inception 구조에 ResNet 개념을 접목시킨 Inception-ResNet 도 같이 발표를 하고, Inception 구조에 ResNet을 개념을 접목시킨 새로운 Inception 구조가 ResNet 팀이 원래 발표한 성능보다 좋다는 것도 보여준다.
 이번 class에서는 2016년에 발표된 논문을 바탕으로 Inception-V4 및 Inception-ResNet에 대하여 살펴볼 예정이다.
+
 Inception-V4
+
 Inception ?V4의 기본 구조는 stem이라고 불리는 9개의 layer를 갖는 부분을 통해 크기가 299x299x3 영상을 받아 35x35x384 크기의 feature-map을 만들어 낸다. 이후 여러 단의 Inception-A, Inception-B 및 Inception-C가 오며, 인셉션 모듈 중간에는 feature-map의 크기를 줄이기 위한 Reduction-A와 Reduction-B가 오고 최종단에는 average pooling, dropout 및 softmax layer가 온다. 전체적인 구조는 아래 그림과 같다.
 기본 구조는 이전 Inception구조와 크게 다르지 않다는 것을 확인할 수 있지만, stem 부분은 이전 인셉션 구조가 비교적 단순한 convolution과 pooling의 조합이었던 반면에 Inception-V4는 좀더 복잡한 구조가 되었다는 것을 확인할 수 있다. 특히 feature-map의 크기를 줄이는 부분이 이전 인셉션 구조와 달리 형태가 다양한 형태를 취하고 있다.
 Inception-V3와 마찬가지로 35x35 크기의 feature-map으로부터 8x8 크기의 feature-map을 만드는 과정에서는 feature-map에 크기에 따라 3가지 다른 형태의 Inception 모듈을 사용했으며, 다음 그림과 같다.
@@ -1659,4 +1506,4 @@ ILSVRC-2012 데이터를 이용하여, single-crop single-model로 실험한 결
 ResNet 구조를 채용했을 때의 가장 큰 장점 중 하나는 학습속도가 빠르다는 점이며 실험결과는 아래의 그래프를 통해 확인이 가능하다. 훨씬 적은 epoch에서 학습 결과가 나오는 것을 확인할 수 있으며, 이는 초기에 최적의 hyper-parameter를 결정할 때 유용하게 활용할 수 있다.
 기존 인셉션 구조를 개선한 Inception-V4의 성능과 인셉션 구조에 residual net 개념을 도입한 Inception-ResNet-V2는 모두 뛰어난 성능을 보이는 것이 확인이 되었다. GoogLeNet 팀들이 발표한 인셉션 구조도 뛰어나고, ResNet 팀이 발표한 ResNet 역시 뛰어난 구조임이 확인되었지만, 아직도 sub-network의 구조를 어떻게 가져가는 것이 정말 최고인지는 명쾌하게 설명할 수 없는 것 같다. 어쩌면 ILSVRC-2012라는 데이터 집합에만 특화된 결과를 내고 있는 것인지도 모른다.
 그런 관점에서 보면 2016년 하반기와 2017년에는 또 누가 얼마나 더 뛰어난 구조를 발표할 것인지 기대가 된다.
-이번 Class를 끝으로 처음에 기획하였던, 영상 관련 딥러닝 구조에 대한 설명을 마친다. LeNet5로부터 시작된 Best CNN Architecture 설명이 좀 부족한 부분이 있을 수도 있지만, 큰 흐름을 살펴봤다는 관점에서는 의미를 갖는 것 같다. 다음 Class에서는 그 동안 구조 설명을 하면서 충분히 자세하게 다루지 못한 내용에 대하여 하나씩 다뤄갈 예정이다.
+- 이번 Class를 끝으로 처음에 기획하였던, 영상 관련 딥러닝 구조에 대한 설명을 마친다. LeNet5로부터 시작된 Best CNN Architecture 설명이 좀 부족한 부분이 있을 수도 있지만, 큰 흐름을 살펴봤다는 관점에서는 의미를 갖는 것 같다. 다음 Class에서는 그 동안 구조 설명을 하면서 충분히 자세하게 다루지 못한 내용에 대하여 하나씩 다뤄갈 예정이다.
