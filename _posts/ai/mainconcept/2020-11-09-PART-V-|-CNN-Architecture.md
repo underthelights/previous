@@ -1,124 +1,81 @@
+---
+layout: article
+title: Part V. CNN Architecture
+key: 0
+tags: ml
+category: ml concept
+date: 2020-11-06 16:48:00 +08:00
+picture_frame: shadow
+---
+PART V / CNN Architecture
+ⓒ [라온피플](https://blog.naver.com/laonple), Stanford cs231n
+
+**fly to the moon.**
+<!--more-->
 
 PART V / CNN Architecture​​
-[Machine Learning Academy_Part Ⅴ. Best CNN Architecture]
-1. Overview
-?
-[Part Ⅳ. CNN] 1. CNN 개요 ~ 4. Convolution Layer [2] 를 통해 CNN의 개념과 구조에 대하여 살펴보았다.
-CNN에 대한 이해를 좀 더 깊게 하기 위해
-유명한 CNN 구조(architecture)들에 대하여 하나씩 차례로 살펴볼 예정이며,
-우선 그것들에 대해 간단히 정리하면 다음과 같다.
-아래에서 살펴볼 최고의 구조는 대부분 대량 영상 인식 경연대회인 ILSVRC에서 우승을 하거나 준우승을 한 것들이다.
-LeNet
-Yann LeCun이 1990년대에 발표한 구조로, 처음으로 CNN이라는 개념을 성공적으로 도입하였으며,
-주로 우편 번호나 숫자 등을 인식하기 위해서 개발이 되었다.
-이미 앞선 class를 통해, 어느 정도 그 구조에 대하여 살펴보았으며, CNN역사에 있어 古典이 되고 있다.
-AlexNet
-컴퓨터 비전 분야에서 CNN이 널리 적용되도록 한 계기가 된 구조로,
-CNN 분야에서 유명한 Krizhevsky와 Hinton 등에 의해 개발이 되었다.
-2012년 ImageNet ILSVRC 대회에서
-2위와 큰 성능차(AlexnNet의 에러율은 16%이고 2위의 에러율은 26%)를 보이며 우승한 것으로 유명하다.
-AlexNet의 구조는 LeNet과 유사하지만,
-보통 convolutional layer 다음에 pooling(sub-sampling) layer가 오는 기본 구조와 달리,
-convolutional layer 바로 뒤에 convolutional layer가 온 점이 특이하다.
-?
-ZF Net
-ILSVRC 2013년 대회에서 우승을 한 구조로 뉴욕대의Matthew Zeiler와 Rob Fergus에 의해서 개발이 되었다.
-Zeiler와 Fergus의 앞 글자를 따 ZF Net이라고 알려지게 되었다.
-AlexNet의 hyper-parameter를 수정하여 성능을 좀 더 개선을 하였으며,
-특히 중간에 있는 convolutional layer의 크기를 늘렸다.
-GoogLeNet
-ILSVRC 2014년 대회에서 우승을 한 구조로 구글의 Szegedy 등에 의해서 개발이 되었다.
-“Inception Module” 개념을 도입했으며, 이것을 통해 망의 파라미터 수를 대폭 줄일 수 있게 되었다.
-(참고로 AlexNet은 60M 파라미터가 있지만, GoogLeNet의 경우는 4M 임)
-VGGNet
-ILSVRC 2014년 대회에서 2등을 한 구조로
-영국 옥스포트 대학교의 Karen Simonyan과 Andrew Zisserman에 의해서 개발이 되었다.
-대량의 이미지를 인식함에 있어, 망의 깊이(depth)가 정확도에 어떤 영향을 주는지를 보여주었다.
-망의 시작부터 끝까지 동일하게 3x3 convolution과 2x2 max pooling을 사용하는 단순한(homogeneous) 구조에서
-depth가 16일 때 최적의 결과가 나오는 것을 보여줬다.
-GoogLeNet에 비해 분류 성능은 약간 떨어졌지만, 다중 전달 학습 과제에서는 오히려 더 좋은 결과가 나왔다.
-그러므로 CNN 연구 그룹에서는 VGGNet의 구조를 좀 더 선호하는 경향이 있다.
-단점이라면, 메모리 수와 파라미터의 수가 크다는 점이다.
-ResNet
-ILSVRC 2015년 대회에서 우승을 한 구조로 마이크로소프트의 Kaiming He 등에 의해서 개발이 되었다.
-기존 DNN(Deep Neural Network)보다 layer 수가 훨씬 많은 Deeper NN에 대한 학습(training)을
-쉽게 할 수 있도록 해주는 residual framework 개념을 도입했다.
-앞으로 몇 회에 걸쳐 앞서 간단하게 언급한 CNN의 구조에 대해서 상세하게 살펴볼 예정이다.
-참고로 ImageNet과 ILSVRC에 대해 간단히 소개하면 다음과 같다.
-ImageNet
-세계 최대의 영상 데이터 베이스이며, 마치 사람이 보고 판단할 수 있는 것처럼,
-컴퓨터 비젼을 연구하는 사람들이 벤치마크로 사용할 수 있는 영상 데이터 베이스이다.
-현재 약 22000종류로 분류가 가능한1500만장의 인터넷 기반의 영상이 확보되어 있다.
-구성은 WordNet의 계층 구조를 따라 만들어졌으며,
-1개의 synset(synonym set)에 대해서 평균 1000장 이상의 영상이 확보되어 있으며,
-사람들이 각각의 영상에 대해 label을 붙여놨기 때문에,
-머신 러닝 기반의 컴퓨터 비젼 프로그램을 개발하거나,
-자신이 개발한 프로그램의 성능을 평가할 때 사용하기에 적합하다.
-ImageNet에 확보된 영상에 대해서는 저작권을 주장하기 않기 때문에
-누구나 편안하게 다운로드 하여 사용할 수가 있다.
-이 영상 데이터베이스는 2009년 스탠포드 대학교의 Li Fei-Fei 교수가 중심이 되어 확보가 되었으며,
-현재는 여러 대학교 및 구글이나 마이크로소프트 같은 기업에서도 참여를 하고 있다.
-ILSVRC
-ImageNet Large Scale Visual Recognition Challenge의 약어로,
-ImageNet 영상 데이터베이스를 기반으로 하여 컴퓨터 비젼 분야의 성능의 우열을 가리기 위한 대회이며,
-2010년부터 매년 열리고 있다.
-이 대회를 통해 놀라운 성능을 보이는 논문들이 많이 발표가 됨에 따라,
-ImageNet은 점차 대량 영상 인식분야에서 표준 벤치마크로 자리를 잡아가고 있다.
-대회의 분야는 image classification, single-object localization 및 object detection으로 나뉜다.
-Image classification과 single-object localization은 그림에 여러 개의 object가 있더라도
-1개를 확실하게 구별할 수 있으면, 맞은 것으로 처리한다.
-단 localization의 경우는 위치까지 찾아내야 한다.
-​
-​
-[Machine Learning Academy_Part Ⅴ. Best CNN Architecture]
-2. LeNet
-?
-?
-CNN(Convolutional Neural Network) ? “LeNet5”
-?
-지난 시간에 예고 했듯이 이번 class부터는 best CNN architecture에 대해서 살펴볼 예정이다.
-Convolutional neural network라는 개념을 최초로 개발한 사람은 프랑스 출신의 Yann LeCun이며,
-그는 현재 뉴욕대 교수와 Facebook 인공 지능 연구소의 기술이사를 겸하고 있다.
-원래 우편번호와 수표의 필기체를 인식하기 위한 용도로 개발을 시작했으며,
-그 연구 그룹이 최종적으로 발표한 구조가 바로 유명한 LeNet5 이다.
-이번 class에서는 LeCun이 1998년에 발표한
-“Gradient-based learning applied to document recognition” 논문과
-기타 다른 참고 자료 등을 기반으로 고전적인 CNN 구조, LeNet5에 대하여 살펴볼 예정이다.
-이미 앞선 class에서 LeCun의 LeNet5의 구조에 대해서 부분적으로 살펴보았고,
-또한 구조 자체가 그리 복잡하지 않기 때문에 이해에 큰 무리가 없을 것이라 생각되며,
-이 구조를 잘 이해하면, 다음부터 차례로 살펴볼 다른 CNN의 구조는 LeNet5와 어떻게 다른지,
-어디에 초점을 맞춘 것인지 등등을 살펴보면서 CNN의 구조에 대한 이해가 깊어질 것으로 예상한다.
-LeNet ? Convolutional Neural Network의 古典
-Yann LeCun과 그의 동료 연구원들은
-기존의 fully-connected neural network이 갖고 있는 한계를 잘 이해하고 있었으며,
-이것들을 개선하기 위한 연구에 돌입했다.
-기존 신경망의 문제점은 이미 [Part Ⅳ. CNN] 1. CNN 개요 를 통해 살펴보았듯이,
-fully-connected neural network이 machine learning에 손색이 없는 알고리즘이기는 하지만,
-topology 변화에 대응이 어렵다는 점이다.
-이 연구진들은 [Part Ⅳ. CNN] 2. Why CNN? ~ 3. CNN의 구조 자료에서 살펴보았던 것처럼,
-local receptive field, shared weight 및 sub-sampling의 개념을 결합한
-CNN(Convolutional Neural Network)의 개념을 개발하게 된다.
-그들이 최초로 개발한 LeNet-1은 1990년에 발표하게 되는데,
-이것이 LeNet-5의 前身(전신)이라고 볼 수 있으며,
-크기가 작을 뿐이지 현재 LeNet-5의 모습을 거의 갖추고 있음을 알 수 있다. (아래 그림 참고)
-처음 LeNet-1을 발표 했을 당시,
-입력 영상의 크기는 28x28로 LeNet-5에 비해서 작으며,
-1단계 convolution을 통해 얻은 feature-map의 개수도 4개로 작으며
-2 단계 convolution에서 얻은 feature-map의 크기도 12개로 작았다.
-하지만 sub-sampling을 적용하여 feature-map의 크기를 줄이고,
-여러 단계의 convolution을 거치면서 작은 feature에서 좀 더 global한 feature를 얻어가는 과정이나,
-의미 있는 global feature를 얻게 되면,
-이것을 fully-connected neural network을 classifier로 사용하는 점도 LeNet-5와 동일하다.
-여기서 5x5 convolution kernel을 통해 local receptive field의 개념을 적용하였고,
-전체 이미지에 대해서 같은 kernel을 적용함으로써 shared weight 개념이 적용되었으며,
-가장 큰 자극만을 취하기 위한 max-pooling 을 적용함으로써 sub-sampling이 적용되게 된다.
-이들은 이 구조를 완성하고 비교를 통해,
-fully-connected network나 기타 다른 machine learning 알고리즘을 적용하는 것보다
-훨씬 결과가 좋다는 사실에 고무되어, 이 구조를 점차 발전시키게 된다.
-이후 이 연구 그룹은 현재의 LeNet-5와 구조적으로 훨씬 유사한 LeNet-4를 거쳐,
-최종적으로 LeNet-5를 발표하기에 이른다.
-LeNet-5
-LeNet-1이 처음 개발될 때는 아무래도 당시의 컴퓨팅 능력이 떨어졌기에
+
+# 1. Overview
+
+- [Part Ⅳ. CNN] 1. CNN 개요 ~ 4. Convolution Layer [2] 를 통해 CNN의 개념과 구조에 대하여 살펴보았다. CNN에 대한 이해를 좀 더 깊게 하기 위해 유명한 CNN 구조(architecture)들에 대하여 하나씩 차례로 살펴볼 예정이며, 우선 그것들에 대해 간단히 정리하면 다음과 같다. 아래에서 살펴볼 최고의 구조는 대부분 대량 영상 인식 경연대회인 ILSVRC에서 우승을 하거나 준우승을 한 것들이다.
+
+## 1.1. LeNet
+- Yann LeCun이 1990년대에 발표한 구조로, 처음으로 CNN이라는 개념을 성공적으로 도입하였으며,
+- 주로 우편 번호나 숫자 등을 인식하기 위해서 개발이 되었다. 이미 앞선 class를 통해, 어느 정도 그 구조에 대하여 살펴보았으며, CNN역사에 있어 古典이 되고 있다.
+
+## 1.2. AlexNet
+- 컴퓨터 비전 분야에서 CNN이 널리 적용되도록 한 계기가 된 구조로, CNN 분야에서 유명한 Krizhevsky와 Hinton 등에 의해 개발이 되었다.
+- 2012년 ImageNet ILSVRC 대회에서 2위와 큰 성능차(AlexnNet의 에러율은 16%이고 2위의 에러율은 26%)를 보이며 우승한 것으로 유명하다.
+- AlexNet의 구조는 LeNet과 유사하지만, 보통 convolutional layer 다음에 pooling(sub-sampling) layer가 오는 기본 구조와 달리, convolutional layer 바로 뒤에 convolutional layer가 온 점이 특이하다.
+
+## 1.3. ZF Net
+- ILSVRC 2013년 대회에서 우승을 한 구조로 뉴욕대의 Matthew Zeiler와 Rob Fergus에 의해서 개발이 되었다.
+- Zeiler와 Fergus의 앞 글자를 따 ZF Net이라고 알려지게 되었다.
+- AlexNet의 hyper-parameter를 수정하여 성능을 좀 더 개선을 하였으며, 특히 중간에 있는 convolutional layer의 크기를 늘렸다.
+
+## 1.4. GoogLeNet
+- ILSVRC 2014년 대회에서 우승을 한 구조로 구글의 Szegedy 등에 의해서 개발이 되었다.
+- “Inception Module” 개념을 도입했으며, 이것을 통해 망의 파라미터 수를 대폭 줄일 수 있게 되었다. (참고로 AlexNet은 60M 파라미터가 있지만, GoogLeNet의 경우는 4M 임)
+
+## 1.5. VGGNet
+- ILSVRC 2014년 대회에서 2등을 한 구조로 영국 옥스포트 대학교의 Karen Simonyan과 Andrew Zisserman에 의해서 개발이 되었다.
+- 대량의 이미지를 인식함에 있어, 망의 깊이(depth)가 정확도에 어떤 영향을 주는지를 보여주었다. 망의 시작부터 끝까지 동일하게 3x3 convolution과 2x2 max pooling을 사용하는 단순한(homogeneous) 구조에서 depth가 16일 때 최적의 결과가 나오는 것을 보여줬다.
+- GoogLeNet에 비해 분류 성능은 약간 떨어졌지만, 다중 전달 학습 과제에서는 오히려 더 좋은 결과가 나왔다. 그러므로 CNN 연구 그룹에서는 VGGNet의 구조를 좀 더 선호하는 경향이 있다.
+- 단점이라면, 메모리 수와 파라미터의 수가 크다는 점이다.
+
+## 1.6. ResNet
+- ILSVRC 2015년 대회에서 우승을 한 구조로 마이크로소프트의 Kaiming He 등에 의해서 개발이 되었다.
+- 기존 DNN(Deep Neural Network)보다 layer 수가 훨씬 많은 Deeper NN에 대한 학습(training)을 쉽게 할 수 있도록 해주는 residual framework 개념을 도입했다. 
+
+- 앞으로 몇 회에 걸쳐 앞서 간단하게 언급한 CNN의 구조에 대해서 상세하게 살펴볼 예정이다.
+- 참고로 ImageNet과 ILSVRC에 대해 간단히 소개하면 다음과 같다.
+## + 1. ImageNet
+- 세계 최대의 영상 데이터 베이스이며, 마치 사람이 보고 판단할 수 있는 것처럼, 컴퓨터 비젼을 연구하는 사람들이 벤치마크로 사용할 수 있는 영상 데이터 베이스이다.
+- 현재 약 22000종류로 분류가 가능한1500만장의 인터넷 기반의 영상이 확보되어 있다. 구성은 WordNet의 계층 구조를 따라 만들어졌으며, 1개의 synset(synonym set)에 대해서 평균 1000장 이상의 영상이 확보되어 있으며, 사람들이 각각의 영상에 대해 label을 붙여놨기 때문에, 머신 러닝 기반의 컴퓨터 비젼 프로그램을 개발하거나, 자신이 개발한 프로그램의 성능을 평가할 때 사용하기에 적합하다.
+- ImageNet에 확보된 영상에 대해서는 저작권을 주장하기 않기 때문에 누구나 편안하게 다운로드 하여 사용할 수가 있다. 이 영상 데이터베이스는 2009년 스탠포드 대학교의 Li Fei-Fei 교수가 중심이 되어 확보가 되었으며, 현재는 여러 대학교 및 구글이나 마이크로소프트 같은 기업에서도 참여를 하고 있다.
+
+## + 2. ILSVRC
+- ImageNet Large Scale Visual Recognition Challenge의 약어로, ImageNet 영상 데이터베이스를 기반으로 하여 컴퓨터 비젼 분야의 성능의 우열을 가리기 위한 대회이며, 2010년부터 매년 열리고 있다.
+- 이 대회를 통해 놀라운 성능을 보이는 논문들이 많이 발표가 됨에 따라, ImageNet은 점차 대량 영상 인식분야에서 표준 벤치마크로 자리를 잡아가고 있다.
+- 대회의 분야는 image classification, single-object localization 및 object detection으로 나뉜다. Image classification과 single-object localization은 그림에 여러 개의 object가 있더라도 1개를 확실하게 구별할 수 있으면, 맞은 것으로 처리한다. 단 localization의 경우는 위치까지 찾아내야 한다.
+
+# 2. LeNet
+- CNN(Convolutional Neural Network) ? “LeNet5”
+-  지난 시간에 예고 했듯이 이번 class부터는 best CNN architecture에 대해서 살펴볼 예정이다.
+
+- Convolutional neural network라는 개념을 최초로 개발한 사람은 프랑스 출신의 Yann LeCun이며, 그는 현재 뉴욕대 교수와 Facebook 인공 지능 연구소의 기술이사를 겸하고 있다. 원래 우편번호와 수표의 필기체를 인식하기 위한 용도로 개발을 시작했으며, 그 연구 그룹이 최종적으로 발표한 구조가 바로 유명한 LeNet5 이다.
+- 이번 class에서는 LeCun이 1998년에 발표한 “Gradient-based learning applied to document recognition” 논문과 기타 다른 참고 자료 등을 기반으로 고전적인 CNN 구조, LeNet5에 대하여 살펴볼 예정이다. 이미 앞선 class에서 LeCun의 LeNet5의 구조에 대해서 부분적으로 살펴보았고, 또한 구조 자체가 그리 복잡하지 않기 때문에 이해에 큰 무리가 없을 것이라 생각되며, 이 구조를 잘 이해하면, 다음부터 차례로 살펴볼 다른 CNN의 구조는 LeNet5와 어떻게 다른지, 어디에 초점을 맞춘 것인지 등등을 살펴보면서 CNN의 구조에 대한 이해가 깊어질 것으로 예상한다.
+
+## 2.1. LeNet ? Convolutional Neural Network의 古典
+- Yann LeCun과 그의 동료 연구원들은 기존의 fully-connected neural network이 갖고 있는 한계를 잘 이해하고 있었으며, 이것들을 개선하기 위한 연구에 돌입했다.
+- 기존 신경망의 문제점은 이미 [Part Ⅳ. CNN] 1. CNN 개요 를 통해 살펴보았듯이, fully-connected neural network이 machine learning에 손색이 없는 알고리즘이기는 하지만, topology 변화에 대응이 어렵다는 점이다.
+- 이 연구진들은 [Part Ⅳ. CNN] 2. Why CNN? ~ 3. CNN의 구조 자료에서 살펴보았던 것처럼, local receptive field, shared weight 및 sub-sampling의 개념을 결합한 CNN(Convolutional Neural Network)의 개념을 개발하게 된다.
+- 그들이 최초로 개발한 LeNet-1은 1990년에 발표하게 되는데, 이것이 LeNet-5의 前身(전신)이라고 볼 수 있으며, 크기가 작을 뿐이지 현재 LeNet-5의 모습을 거의 갖추고 있음을 알 수 있다. (아래 그림 참고)
+- 처음 LeNet-1을 발표 했을 당시, 입력 영상의 크기는 28x28로 LeNet-5에 비해서 작으며, 1단계 convolution을 통해 얻은 feature-map의 개수도 4개로 작으며 2 단계 convolution에서 얻은 feature-map의 크기도 12개로 작았다. 하지만 sub-sampling을 적용하여 feature-map의 크기를 줄이고, 여러 단계의 convolution을 거치면서 작은 feature에서 좀 더 global한 feature를 얻어가는 과정이나, 의미 있는 global feature를 얻게 되면, 이것을 fully-connected neural network을 classifier로 사용하는 점도 LeNet-5와 동일하다.
+- 여기서 5x5 convolution kernel을 통해 local receptive field의 개념을 적용하였고, 전체 이미지에 대해서 같은 kernel을 적용함으로써 shared weight 개념이 적용되었으며, 가장 큰 자극만을 취하기 위한 max-pooling 을 적용함으로써 sub-sampling이 적용되게 된다. 이들은 이 구조를 완성하고 비교를 통해, fully-connected network나 기타 다른 machine learning 알고리즘을 적용하는 것보다 훨씬 결과가 좋다는 사실에 고무되어, 이 구조를 점차 발전시키게 된다.
+- 이후 이 연구 그룹은 현재의 LeNet-5와 구조적으로 훨씬 유사한 LeNet-4를 거쳐, 최종적으로 LeNet-5를 발표하기에 이른다.
+## 2.2. LeNet-5
+- LeNet-1이 처음 개발될 때는 아무래도 당시의 컴퓨팅 능력이 떨어졌기에
 파라미터의 수가 작은 망을 개발했으리라 생각이 된다.
 개발 후 결과를 보니, 입력 이미지의 크기 및 convolution kernel의 개수를 늘리고
 최종단에 있는 fully-connected layer의 크기도 키우는 방향으로 자연스럽게 연구 흐름이 이어진 것으로 보인다.
@@ -194,10 +151,8 @@ topology 변화나 잡음에 대한 내성이 상당히 강함을 알 수가 있
 이번 class는 LeNet-5의 구조에 대해서 알아보았다.
 그리 복잡하지 않은 망을 이용하여 놀랄만한 성과를 얻을 수 있음이 확인이 되었다.
 다음 class에서는 AlexNet에 대해 상세하게 살펴보기로 한다.
-​
-​
-[Machine Learning Academy_Part Ⅴ. Best CNN Architecture]
-3. AlexNet [1]
+
+# 3. AlexNet [1]
 AlexNet ?
 ImageNet 영상 데이터 베이스를 기반으로 한
 "ILSVRC(ImageNet Large Scale Visual Recognition Challenge) - 2012" 우승은
@@ -1704,5 +1659,4 @@ ILSVRC-2012 데이터를 이용하여, single-crop single-model로 실험한 결
 ResNet 구조를 채용했을 때의 가장 큰 장점 중 하나는 학습속도가 빠르다는 점이며 실험결과는 아래의 그래프를 통해 확인이 가능하다. 훨씬 적은 epoch에서 학습 결과가 나오는 것을 확인할 수 있으며, 이는 초기에 최적의 hyper-parameter를 결정할 때 유용하게 활용할 수 있다.
 기존 인셉션 구조를 개선한 Inception-V4의 성능과 인셉션 구조에 residual net 개념을 도입한 Inception-ResNet-V2는 모두 뛰어난 성능을 보이는 것이 확인이 되었다. GoogLeNet 팀들이 발표한 인셉션 구조도 뛰어나고, ResNet 팀이 발표한 ResNet 역시 뛰어난 구조임이 확인되었지만, 아직도 sub-network의 구조를 어떻게 가져가는 것이 정말 최고인지는 명쾌하게 설명할 수 없는 것 같다. 어쩌면 ILSVRC-2012라는 데이터 집합에만 특화된 결과를 내고 있는 것인지도 모른다.
 그런 관점에서 보면 2016년 하반기와 2017년에는 또 누가 얼마나 더 뛰어난 구조를 발표할 것인지 기대가 된다.
-이번 Class를 끝으로 처음에 기획하였던, 영상 관련 딥러닝 구조에 대한 설명을 마친다. LeNet5로부터 시작된 Best CNN Architecture 설명이 좀 부족한 부분이 있을 수도 있지만, 큰 흐름을 살펴봤다는 관점에서는 의미를 갖는 것 같다. 다음 Class에서는 그 동안 구조 설명을 하면서 충분히 자세하게 다루지 못한 내용에 대하여 하나씩 다뤄갈 예정이다.​
-​
+이번 Class를 끝으로 처음에 기획하였던, 영상 관련 딥러닝 구조에 대한 설명을 마친다. LeNet5로부터 시작된 Best CNN Architecture 설명이 좀 부족한 부분이 있을 수도 있지만, 큰 흐름을 살펴봤다는 관점에서는 의미를 갖는 것 같다. 다음 Class에서는 그 동안 구조 설명을 하면서 충분히 자세하게 다루지 못한 내용에 대하여 하나씩 다뤄갈 예정이다.
