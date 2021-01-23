@@ -477,13 +477,8 @@ SIFT 알고리즘을 설명할 때, 가장 많이 사용되는 그림이 바로 
 영상에서 단순하게 경계를 검출하면, 잡음을 포함한 의미 없는 edge도 많이 검출하기 때문에
 먼저 Gaussian filter를 여러 레벨로 적용(σ 값을 조절)하여 영상을 blur 시키고,
 그것들 간의 차(difference)를 구하면, 잡음에 강인한 feature가 얻어진다. (DoG: Difference of Gauassian).
-이렇게 현재 scale에 대한 작업을 마치면, scale 변화에 대응이 가능하도록  영상의 scale을 바꿔가면서
-동일한 작업을 수행하여, 서로 다른 scale(크기)에서의 강인한 feature(extrema)를 구한다.
-?
-DoG를 통해 비교적 강인한 extrema를 추출했을지라도
-아직 쓸모 없는 정보들도 많이 포함이 되어 있기 때문에
-이것을 key-point localization 작업과 filtering을 통해 의미가 있는 정보들만 추출해낸다.
-다음은 gradient의 방향에 따른 histogram을 구한다.
+이렇게 현재 scale에 대한 작업을 마치면, scale 변화에 대응이 가능하도록  영상의 scale을 바꿔가면서 동일한 작업을 수행하여, 서로 다른 scale(크기)에서의 강인한 feature(extrema)를 구한다. DoG를 통해 비교적 강인한 extrema를 추출했을지라도 아직 쓸모 없는 정보들도 많이 포함이 되어 있기 때문에 이것을 key-point localization 작업과 filtering을 통해 의미가 있는 정보들만 추출해낸다. 
+- 다음은 gradient의 방향에 따른 histogram을 구한다.
 ?
 다음은 4x4 gradient window에서 8개의 방향으로 4x4x8 = 128 총 128차원의 descriptor를 만들고,
 이 descriptor를 비교하는 방식으로 영상의 정합성 여부를 판단하게 된다.
