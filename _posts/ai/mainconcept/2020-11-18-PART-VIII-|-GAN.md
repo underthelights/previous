@@ -1,3 +1,19 @@
+---
+layout: article
+title: PART VIII. GAN
+key: 0
+tags: ml
+category: ml concept
+date: 2020-11-18 16:48:00 +08:00
+picture_frame: shadow
+---
+
+PART VIII / GAN
+ⓒ [라온피플](https://blog.naver.com/laonple), Stanford cs231n
+
+**fly to the moon.**
+<!--more-->
+
 PART VIII / GAN​
 ​
 ​
