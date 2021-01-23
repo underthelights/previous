@@ -1,3 +1,19 @@
+---
+layout: article
+title: PART VII. Semantic Segmentation
+key: 0
+tags: ml
+category: ml concept
+date: 2020-11-15 16:48:00 +08:00
+picture_frame: shadow
+---
+PART VII / Semantic Segmentation
+ⓒ [라온피플](https://blog.naver.com/laonple), Stanford cs231n
+
+**fly to the moon.**
+<!--more-->
+
+
 ​PART VII / Semantic Segmentation​
 [Machine Learning Academy_Part Ⅶ. Semantic Segmentation]
 1. Image Segmentation 기본이론 [1]
