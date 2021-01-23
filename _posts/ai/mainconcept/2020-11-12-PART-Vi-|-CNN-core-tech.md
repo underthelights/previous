@@ -1,6 +1,19 @@
-PART VI / CNN Core Technology​
-[Machine Learning Academy_Part Ⅵ. CNN 핵심 요소 기술]
-1. Batch Normalization [1]
+---
+layout: article
+title: PART VI. CNN Core Technology
+key: 0
+tags: ml
+category: ml concept
+date: 2020-11-12 16:48:00 +08:00
+picture_frame: shadow
+---
+PART VI / CNN Core Technology
+ⓒ [라온피플](https://blog.naver.com/laonple), Stanford cs231n
+
+**fly to the moon.**
+<!--more-->
+
+# 1. Batch Normalization [1]
 딥러닝에서 가장 골치 아픈 문제 중 하나는 vanishing/exploding gradient 문제이다. Layer 수가 적은 경우는 그 문제가 심각하지 않지만, layer 수가 많아지면 많아질수록 누적되어 나타나기 때문에 심각하게 된다.
 그 이유는 활성함수로 sigmoid나 hyper-tangent와 같은 비선형 포화함수(non-linear saturating function)를 사용하게 되면, 입력의 절대값이 작은 일부 구간을 제외하면 미분값이 0 근처로 가기 때문에 역전파(back-propagation)을 통한 학습이 어려워지거나 느려지게 된다. ([Part V. Best CNN Architecture] 8. ResNet [1] 참고)
 이 문제에 대한 해결책으로 2011년 ReLU(Rectifier Linear Unit)을 활성함수로 쓰는 방법이 소개되어 문제가 완화되기는 했지만, 이것은 간접적인 회피이지 본질적인 해결책이 아니라서 망이 깊어지면 여전히 문제가 된다. dropout이나 기타 regularization 방법들 역시 본질적인 해결책이 아니기 때문에 여전히 일정 layer 수를 넘어가게 되면 “training”을 성공시킨다는 것을 보장할 수 없게 된다.
