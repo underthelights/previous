@@ -14,11 +14,9 @@ PART VI / CNN Core Technology
 <!--more-->
 
 # 1. Batch Normalization [1]
-딥러닝에서 가장 골치 아픈 문제 중 하나는 vanishing/exploding gradient 문제이다. Layer 수가 적은 경우는 그 문제가 심각하지 않지만, layer 수가 많아지면 많아질수록 누적되어 나타나기 때문에 심각하게 된다.
-그 이유는 활성함수로 sigmoid나 hyper-tangent와 같은 비선형 포화함수(non-linear saturating function)를 사용하게 되면, 입력의 절대값이 작은 일부 구간을 제외하면 미분값이 0 근처로 가기 때문에 역전파(back-propagation)을 통한 학습이 어려워지거나 느려지게 된다. ([Part V. Best CNN Architecture] 8. ResNet [1] 참고)
-이 문제에 대한 해결책으로 2011년 ReLU(Rectifier Linear Unit)을 활성함수로 쓰는 방법이 소개되어 문제가 완화되기는 했지만, 이것은 간접적인 회피이지 본질적인 해결책이 아니라서 망이 깊어지면 여전히 문제가 된다. dropout이나 기타 regularization 방법들 역시 본질적인 해결책이 아니기 때문에 여전히 일정 layer 수를 넘어가게 되면 “training”을 성공시킨다는 것을 보장할 수 없게 된다.
-그러다가 2015년에 획기적인 방법 두개가 발표가 되는데, 그것은 BN(Batch Normalization)과 Residual Network이다. Residual Network에 대한 설명은 이미 앞에서([Part V. Best CNN Architecture] 8. ResNet [1] ~ 8. ResNet [8] 참고) 충분히 했으나, BN에 대한 설명은 충분하지 못했던 것 같다.
-BN은 2015년 발표된 이래 최근 딥러닝에는 거의 대부분 적용이 되는 추세이며, ResNet에도 BN이 적용이 되었고, 구글의 Inception-V2 이후의 후속 구조에는 모두 BN이 적용이 된다.
+- 딥러닝에서 가장 골치 아픈 문제 중 하나는 vanishing/exploding gradient 문제이다. Layer 수가 적은 경우는 그 문제가 심각하지 않지만, layer 수가 많아지면 많아질수록 누적되어 나타나기 때문에 심각하게 된다. 그 이유는 활성함수로 sigmoid나 hyper-tangent와 같은 비선형 포화함수(non-linear saturating function)를 사용하게 되면, 입력의 절대값이 작은 일부 구간을 제외하면 미분값이 0 근처로 가기 때문에 역전파(back-propagation)을 통한 학습이 어려워지거나 느려지게 된다. ([Part V. Best CNN Architecture] 8. ResNet [1] 참고)
+- 이 문제에 대한 해결책으로 2011년 ReLU(Rectifier Linear Unit)을 활성함수로 쓰는 방법이 소개되어 문제가 완화되기는 했지만, 이것은 간접적인 회피이지 본질적인 해결책이 아니라서 망이 깊어지면 여전히 문제가 된다. dropout이나 기타 regularization 방법들 역시 본질적인 해결책이 아니기 때문에 여전히 일정 layer 수를 넘어가게 되면 “training”을 성공시킨다는 것을 보장할 수 없게 된다. 그러다가 2015년에 획기적인 방법 두개가 발표가 되는데, 그것은 BN(Batch Normalization)과 Residual Network이다. Residual Network에 대한 설명은 이미 앞에서([Part V. Best CNN Architecture] 8. ResNet [1] ~ 8. ResNet [8] 참고) 충분히 했으나, BN에 대한 설명은 충분하지 못했던 것 같다.
+- BN은 2015년 발표된 이래 최근 딥러닝에는 거의 대부분 적용이 되는 추세이며, ResNet에도 BN이 적용이 되었고, 구글의 Inception-V2 이후의 후속 구조에는 모두 BN이 적용이 된다.
 Batch Normalization은 구글의 Sergey Ioffe와 Christian Szegedy가 공동으로 발표했으며, 논문이 깔끔하게 잘 되어 있기는 하지만 몇군데는 혼동되는 부분이 있으며, 통계적인 지식을 필요로 하기 때문에 이해에 어려운 부분도 있다. 이번 Class는 “Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift”를 중심으로 살펴 볼 예정이다.
 Internal Covariate Shift
 최근 딥러닝에는 대부분 GPU가 사용이 되고 있으며, GPU를 효율적으로 사용할 수 있도록 보통은 32~256 크기를 갖는 mini-batch SGD(stochastic gradient descent) 방법을 많이 사용한다.
@@ -206,10 +204,8 @@ SVHN 데이터를 이용한 실험 결과는 아래와 같다. 이 실험 결과
 이론적으로는 DropConnect의 자유도(표현력)가 높아 Dropout보다 좋아야 할 것 같은데, 약간 좋은 수준이라서 논란의 여지는 있는 것 같다. 자세한 내용은 논문을 참고하면 될 것 같다.
 DropConnect 논문이나 Dropout 논문에서 아주 Deep Network에 대한 실험을 한 것은 아니지만, Dropout이나 DropConnect 가 효과적이라는 것은 이미 여러 곳에서 입증이 되었다. 그 만큼 신경망 학습에서 overfitting 문제는 크고, 이 문제 해결을 위한 적절한 regularization 방법의 선택이 중요하며, Dropout 혹은 DropConnect 는 아주 효과적인 방식임에 틀림 없다.
 이번 Class에서는 Dropout의 hyper-parameter에 대하여 살펴보았고, Dropout과 거의 유사한 개념인 DropConnect 방식도 살펴보았다. 다음 Class에서는 Dropout의 생략 개념을 확대/발전 시킨 “Stochastic pooling”과 “Maxout” 방식에 대하여 살펴 볼 예정이다.
-​
-​
-[Machine Learning Academy_Part Ⅵ. CNN 핵심 요소 기술]
-3. Stochastic Pooling
+
+# 3. Stochastic Pooling
 CNN의 핵심 요소 기술 ? Stochastic Pooling
 [Part VI. CNN 핵심 요소 기술] 2. Dropout [1] ~ 2. Dropout [3] 를 통해, 신경망의 학습 과정에서 파라미터의 동조화 현상으로 인해 overfitting이 발생하고 결과적으로 학습 효율이 떨어지게 되며, 이를 피하기 위한 매우 효과적인 regularization 기법인 Dropout에 대하여 살펴보았고, Dropout을 좀 더 일반화 시킨 DropConnect 방법도 살펴보았다.
 Dropout의 효과는 많은 연구 팀에 자극을 주었으며, ZFNet 개발자로 유명한 뉴욕대의 Matthew Zeiler와 Rob Fergus도 그들 중 하나이다. 이들은 “Stochastic Pooling for Regularization of Deep Convolutional Neural Networks”라는 논문을 2013년에 발표하였으며, Dropout이 주로 fully connected layer에 적용하여 효과를 얻었던 것과 달리, pooling layer에 stochastic pooling 방법을 적용하여 큰 효과를 얻었다.
