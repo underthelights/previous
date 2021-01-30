@@ -5,8 +5,8 @@ key: page-about
 ---
 Welcome to my blog! :earth_asia: :earth_africa: :earth_americas:
 
-### Profile
--------
+Profile
+-----
    <ul class="simple">
       <li>Chief Research Officer at <a class="reference external"href="http://oconnect3.netlify.app">OCONNECT</a></li>
       <li>CV : <a class="reference external" target="_blank" href="https://raw.githubusercontent.com/carpedm20/blog/HEAD/content/CV_Taehoon_Kim_Public.pdf">[PDF] (as of Nov. 2020)</a></li>
@@ -15,347 +15,81 @@ Welcome to my blog! :earth_asia: :earth_africa: :earth_americas:
 
 Links
 -----
-:Email: **`mailto:skh7343@cnsh.hs.kr`**
-:Github: `github.com/carpedm20`_
-:Twitter: `twitter.com/carpedm20`_
-:Linkedin: `linkedin.com/in/carpedm20`_
-:Slideshare: `slideshare.net/carpedm20`_
-:Google Scholar: `author page <https://scholar.google.com/citations?user=0BefWnYAAAAJ>`__
+
+|------|---|
+|Email|mailto:skh7343@cnsh.hs.kr|
+|Github|[underthelights](github.com/underthelights)|
+|LinkedIn|[KyuHwan Shim](https://www.linkedin.com/in/kyuhwan-shim-a95b31198/)|
+|instagram|[KyuHwan Shim](instagram.com/s.kyuhwn)|
 
 
-.. raw:: html
+Education
+-----
+- B.Sc. at [Sogang U.](sogang.ac.kr)
+   - 2019 ~ 2023
+   - Major in Computer Science, Minor in Mathematics
+   
+- High School Diploma, at [Chungnam Science High School](cnsh.cnehs.kr)
+   - 2016 - 2018
+   - The Informatica 
 
-   <br>
-   <hr>
+Scholarships
+-----
+- Alumni Scholarship, Sogang U. Alumni :: 2020
+   - 1-semester full scholarship from Sogang U. Alumni
+- Albatross Scholarship, Sogang U. :: 2019
+   - 1-year full scholarship for freshman who passed the application of Albatross Specialist Decision
+- KAIST Scholarship, Chungnam Science HS. :: 2018
+   - from KAIST emeritus professor
+- MyungHak Scholarship, Chungnam Science HS. :: 2016
+   - Myunghak scholarship
+
 
 
 Research Experience
----------------------
-
+-----
+<!--
 `OpenAI <http://openai.com>`__ (2018.09 ~ )
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 - Reinforcement Learning / Robotics / Language (Advised by `John Schulman <http://joschu.net/>`__)
-
-`University of Southern California <https://www.clvrai.com/>`__ (2016.12 ~ 2018.09)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-- Reinforcement Learning (Advisor: `Prof. Joseph J. Lim <http://people.csail.mit.edu/lim/>`__)
-
+-->
+<!--
+`University of Southern California <https://www.clvrai.com/>` (2016.12 ~ 2018.09)
+- Reinforcement Learning (Advisor: `Prof. Joseph J. Lim <http://people.csail.mit.edu/lim/>__)
 `Seoul National University <https://cv.snu.ac.kr/>`__ (2018.04 ~ 2018.07)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Computer Vision (Advisor: `Prof. Bohyung Han <https://cv.snu.ac.kr/index.php/~bhhan/>`
 
-- Computer Vision (Advisor: `Prof. Bohyung Han <https://cv.snu.ac.kr/index.php/~bhhan/>`__)
-
-`Statistical Artificial Intelligence Lab <http://sail.unist.ac.kr/>`__ @ UNIST (2014.09 ~ 2015.10)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-- Natural Language Processing (Advisor: `Prof. Jaesik Choi <http://sail.unist.ac.kr/members/jaesik/>`__)
-
-`Lawrence Berkeley National Laboratory <http://www.lbl.gov/>`__ (2015.07 ~ 2015.09)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-- Machine Learning (Advisors: `John Wu <https://crd.lbl.gov/departments/data-science-and-technology/sdm/staff/wu/>`__, `Alex Sim <https://crd.lbl.gov/departments/data-science-and-technology/sdm/staff/alex-sim/>`__)
+`Statistical Artificial Intelligence Lab <http://sail.unist.ac.kr/>@ UNIST (2014.09 ~ 2015.10)
+- Natural Language Processing (Advisor: Prof. Jaesik Choi <http://sail.unist.ac.kr/members/jaesik/>`
 
 
-`Mobile Social Network Lab <http://msn.unist.ac.kr/>`__ @ UNIST (2013.01 ~ 2014.08)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-- Mobile Network (Advisor: `Prof. Kyunghan Lee <http://msn.unist.ac.kr/member/khlee/>`__)
-
-.. raw:: html
-
-   <br>
-   <hr>
+`Lawrence Berkeley National Laboratory <http://www.lbl.gov/>__ (2015.07 ~ 2015.09)
+- Machine Learning (Advisors: John Wu <https://crd.lbl.gov/departments/data-science-and-technology/sdm/staff/wu/>`__ `Alex Sim <https://crd.lbl.gov/departments/data-science-and-technology/sdm/staff/alex-sim/>-->
 
 Work Experience
------------------
+-----
 
-`Devsisters <http://www.devsisters.com/>`__, Research Engineer (2016.04 ~ 2018.08)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [OCONNECT](oconnect3.netlify.app), Cheif Research Officer (2019.03 ~ Present)
+   - UNIST UNISPART
+   - with friends
+   - OX Tab
 
-`Vingle <https://www.vingle.net/>`__, Software Engineer (2015.10 ~ 2016.04)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Moloco`_, Software Intern, Palo Alto, USA (2014.10 ~ 2015.01)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`NAVER Labs`_, Software Intern (2014.07 ~ 2014.08)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-.. raw:: html
-
-   <br>
-   <hr>
 
 
 Awards
 ------
 
-Machine Learning
-~~~~~~~~~~~~~~~~
-
-- `AI Grant Fellowship <https://aigrant.org/>`__ ($2,500 cash + $20,000 credit as award) :: 2018
-- `DataCom 2015 Best Paper Award <http://sail.unist.ac.kr/paper-best-paper-award-from-datacom-2015-for-predicting-real-world-electricity-usages/>`__ :: [`PDF <https://sdm.lbl.gov/oapapers/DataCom2015_kim_report.pdf>`__]
-
-Supercomputing
-~~~~~~~~~~~~~~
-- `International Supercomputing Conference 14 Student Cluster Challenge <http://hpcadvisorycouncil.com/events/2014/isc14-student-cluster-competition/>`__ :: **Finalist**
-- `Asia student Supercomputing Challenge 14 <http://www.asc-events.org/ASC14/index14en.php>`__ :: **Finalist**
-- `Asia student Supercomputing Challenge 13 <http://www.asc-events.org/13en/index13en.php>`__ :: **Finalist**
-
-Hacking
-~~~~~~~
-- `2013 Korea Whitehat Contest`_ :: **3rd place** (reward **$8,000**)
-   - Awarded by **the Minister of National Defense** (**국방부 장관상**)
-- `Holyshield 2013`_ :: **1st place** (reward $1,000)
-- `2014 Korea Whitehat Contest`_ :: **Finalist**
-
-Scholarships
-~~~~~~~~~~~~
-- Global Scholarship for Undergraduate Research Opportunities Program, UNIST :: 2015
-- National Science and Engineering Scholarship, Korean Student Aid Foundation :: 2013
-- Academic Performance Scholarship, UNIST :: 2011-2015
 
 ETC
-~~~
+-----
 - **2016 The Best Undergraduate Award** (**미래창조과학부장관상**)
    - **Ranked 1st out of 509 undergraduates**, awarded by **the Minister of Science and Future Planning**
 - 2014 Student Outstanding Contribution Award, awarded by the President of `UNIST`_
 - 2013 Student Outstanding Contribution Award, awarded by the President of `UNIST`_
 
 
-.. raw:: html
-
-   <br>
-   <hr>
-
-
 Personal Projects
------------------
+-----
 
-.. raw:: html
-
-   <!--<p style="color: red; text-align: center;"><strong>All demo links are dead because the virtual machine are corrupted (2015-06-11)</strong></p>-->
-
-
-Machine Learning
-~~~~~~~~~~~~~~~~
-
-Generative Models
-+++++++++++++++++
-
-.. raw:: html
-
-   <div class="pure-g hidden">
-      <a class="reference external image-reference" target="_blank" href="https://github.com/carpedm20/BEGAN-tensorflow" style="width: 100%;">
-         <img alt="BEGAN" class="align-center" src="https://github.com/carpedm20/BEGAN-tensorflow/raw/master/assets/interp_1.png" style="width: 90%;">
-         <img alt="BEGAN" class="align-center" src="https://github.com/carpedm20/BEGAN-tensorflow/raw/master/assets/interp_3.png" style="width: 90%;">
-         <img alt="BEGAN" class="align-center" src="https://github.com/carpedm20/BEGAN-tensorflow/raw/master/assets/interp_4.png" style="width: 90%;">
-      </a>
-      <br/>
-      <a class="reference external image-reference" target="_blank" href="https://github.com/carpedm20/DiscoGAN-pytorch" style="width: 100%;">
-         <img alt="DiscoGAN" class="align-center" src="https://raw.githubusercontent.com/carpedm20/blog/master/content/images/DiscoGAN2.png" style="width: 90%;">
-      </a>
-   </div>
-
-- **DCGAN-tensorflow** :: `Deep Convolutional GAN <http://arxiv.org/abs/1511.06434>`__ :: `code <https://github.com/carpedm20/DCGAN-tensorflow>`__ :: `demo <http://carpedm20.github.io/faces/>`__
-- **SPIRAL-tensorflow** :: `Synthesizing Programs for Images using Reinforced Adversarial Learning <https://deepmind.com/blog/learning-to-generate-images/>`__ :: `code <https://github.com/carpedm20/SPIRAL-tensorflow>`__
-- **simulated-unsupervised-tensorflow** :: `Simulated and Unsupervised learning with GAN <https://arxiv.org/abs/1612.07828>`__ :: `code <https://github.com/carpedm20/simulated-unsupervised-tensorflow>`__
-- **DiscoGAN-pytorch** :: `Discover Cross-Domain Relations with GAN <https://arxiv.org/abs/1703.05192>`__:: `code <https://github.com/carpedm20/DiscoGAN-pytorch>`__
-- **BEGAN-tensorflow** :: `Boundary Equilibrium GAN <https://arxiv.org/abs/1703.10717>`__ :: `code <https://github.com/carpedm20/BEGAN-tensorflow>`__
-- **BEGAN-pytorch** :: `Boundary Equilibrium GAN <https://arxiv.org/abs/1703.10717>`__ :: `code <https://github.com/carpedm20/BEGAN-pytorch>`__
-- **pixel-rnn-tensorflow** :: `Pixel Recurrent Neural Networks <https://arxiv.org/abs/1601.06759>`__ :: `code <https://github.com/carpedm20/pixel-rnn-tensorflow/>`__
-- **visual-analogy-tensorflow** :: `Deep Visual Analogy-Making <http://www-personal.umich.edu/~reedscot/nips2015.pdf>`__ :: `code <https://github.com/carpedm20/visual-analogy-tensorflow>`__
-
-
-Reinforcement Learning
-++++++++++++++++++++++
-
-- **ENAS-pytorch** :: `Efficient Neural Architecture Search via Parameters Sharing <https://arxiv.org/abs/1802.03268>`__ :: `code <https://github.com/carpedm20/ENAS-pytorch/>`__
-- **DQN-tensorflow** :: `Human-Level Control through Deep Reinforcement Learning <http://home.uchicago.edu/~arij/journalclub/papers/2015_Mnih_et_al.pdf>`__ :: `code <https://github.com/devsisters/DQN-tensorflow/>`__
-- **deep-rl-tensorflow** :: 1) `Prioritized <http://arxiv.org/abs/1511.05952>`__ 2) `Deuling <http://arxiv.org/abs/1511.06581>`__ 3) `Double <http://arxiv.org/abs/1509.06461>`__ 4) `DQN <https://arxiv.org/abs/1312.5602>`__ :: `code <https://github.com/carpedm20/deep-rl-tensorflow/>`__
-- **NAF-tensorflow** :: `Continuous Deep q-Learning with Model-based Acceleration <http://arxiv.org/abs/1603.00748>`__ :: `code <https://github.com/carpedm20/NAF-tensorflow/>`__
-- **a3c-tensorflow** :: `Asynchronous Methods for Deep Reinforcement Learning <http://arxiv.org/abs/1602.01783>`__ :: `code <https://github.com/carpedm20/a3c-tensorflow/>`__
-- text-based-game-rl-tensorflow :: `Language Understanding for Text-based Games using Deep Reinforcement Learning <http://arxiv.org/abs/1506.08941>`__ :: `code <https://github.com/carpedm20/text-based-game-rl-tensorflow>`__
-
-
-Program Induction
-+++++++++++++++++
-
-- **program-synthesis-rl-tensorflow** :: `Leveraging Grammar and Reinforcement Learning for Neural Program Synthesis <https://openreview.net/forum?id=H1Xw62kRZ>`__ :: `code <https://github.com/carpedm20/program-synthesis-rl-tensorflow>`__
-- **NTM-tensorflow** :: `Neural Turing Machine <http://arxiv.org/abs/1410.5401>`__ :: `code <https://github.com/carpedm20/NTM-tensorflow>`__
-- **pointer-network-tensorflow** :: `Pointer Network <https://arxiv.org/abs/1506.03134>`__ :: `code <https://github.com/devsisters/pointer-network-tensorflow>`__
-- neural-combinatorial-rl :: `Neural Combinatorial Optimization with RL <http://arxiv.org/abs/1611.09940>`__ :: `code <https://github.com/devsisters/neural-combinatorial-rl-tensorflow>`__
-
-
-NLP
-+++
-
-- **MemN2N-tensorflow** :: `End-To-End Memory Network <http://arxiv.org/abs/1503.08895>`__ :: `code <https://github.com/carpedm20/MemN2N-tensorflow>`__
-- variational-text-tensorflow :: `Neural Variational Inference for Text Processing <http://arxiv.org/abs/1511.06038>`__ :: `code <https://github.com/carpedm20/variational-text-tensorflow>`__
-- lstm-char-cnn-tensorflow :: `Character-Aware Neural Language Models <http://arxiv.org/abs/1508.06615>`__ :: `code <https://github.com/carpedm20/lstm-char-cnn-tensorflow>`__
-- attentive-reader-tensorflow :: `Teaching Machines to Read and Comprehend <http://arxiv.org/abs/1506.03340>`__ :: `code <https://github.com/carpedm20/attentive-reader-tensorflow>`__
-
-
-Speech Synthesis
-++++++++++++++++
-
-.. raw:: html
-
-   <div class="pure-g hidden">
-      <a class="reference external image-reference" target="_blank" href="http://carpedm20.github.io/tacotron/"><img alt="Tacotron" class="align-center" src="https://raw.githubusercontent.com/carpedm20/blog/master/content/images/tacotron.png" style="width: 90%;"></a>
-   </div>
-
-- **Multi-Speaker-Tacotron-Tensorflow** :: `Deep Voice 2: Multi-Speaker Neural Text-to-Speech <https://arxiv.org/abs/1705.08947>`__ :: `code <https://github.com/carpedm20/multi-speaker-tacotron-tensorflow>`__ :: `demo <http://carpedm20.github.io/tacotron/en.html>`__
-
-
-.. raw:: html
-
-   <div class="pure-g hidden">
-      <a class="reference external image-reference" target="_blank" href="http://carpedm20.github.io/faces/"><img alt="Neural Faces" class="align-center" src="https://raw.githubusercontent.com/carpedm20/blog/master/content/images/face.png" style="width: 90%;"></a>
-      <br/>
-      <a class="reference external image-reference" target="_blank" href="https://github.com/carpedm20/poet-neural"><img alt="Poet Neural" class="align-center" src="https://raw.githubusercontent.com/carpedm20/poet-neural/master/contents/screenshot5.png" style="width: 90%;"></a>
-      <br/>
-      <a class="reference external image-reference" target="_blank" href="https://www.youtube.com/watch?v=nKyt3jo2Hno"><img alt="ReviewDuk" class="align-center" src="https://raw.githubusercontent.com/carpedm20/blog/master/content/images/reviewduk.png" style="width: 90%;"></a>
-   </div>
-
-- Neural Faces :: Human faces from Neural Network :: `code <https://github.com/carpedm20/DCGAN-tensorflow>`__ :: `demo <http://carpedm20.github.io/faces/>`__
-- Poet Neural :: Poet born from Neural Network :: `code <https://github.com/carpedm20/poet-neural>`__ :: demo
-- Fake Review Generator :: Fake review generator born from Neural Network :: `code <https://github.com/carpedm20/poet-neural>`__ :: demo
-- ReviewDuk :: Korean Sentiment Analyzer in Morphologically Rich Languages :: `code <https://github.com/carpedm20/reviewduk>`__ :: `demo <https://www.youtube.com/watch?v=nKyt3jo2Hno>`__
-- FoodClassifier :: Food image classifier :: `python <https://github.com/carpedm20/FoodClassifier>`__ :: `matlab <https://github.com/carpedm20/FoodClassifier-matlab>`__ :: `report <https://drive.google.com/file/d/0ByTS2HBKYvZxeHNhbUN1UkhGWjd2RTJYRkphb3dkSjVBbjJn/view?usp=sharing>`__
-- word2vec-tensorflow :: Word2Vec implementation :: `code <https://github.com/carpedm20/word2vec-tensorflow>`__
-
-
-Hacked services
-~~~~~~~~~~~~~~~
-
-.. raw:: html
-
-   <div class="pure-g hidden" style="width:100%">
-      <a class="reference external image-reference pure-u-1-3" target="_blank" href="https://github.com/carpedm20/LINE"><img alt="line" class="fb-bot" src="https://raw.githubusercontent.com/carpedm20/blog/master/content/images/line_logo.png"></a>
-      <a class="reference external image-reference pure-u-1-3" target="_blank" href="https://github.com/carpedm20/kakaotalk"><img alt="kakaotalk" class="fb-bot" src="https://raw.githubusercontent.com/carpedm20/blog/master/content/images/kakaotalk.png"></a>
-      <a class="reference external image-reference pure-u-1-3" target="_blank" href="https://github.com/carpedm20/between"><img alt="between" class="fb-bot" src="https://raw.githubusercontent.com/carpedm20/blog/master/content/images/between.png"></a>
-      <a class="reference external image-reference pure-u-1-3" target="_blank" href="https://github.com/carpedm20/ndrive"><img alt="ndrive" class="fb-bot" src="https://raw.githubusercontent.com/carpedm20/blog/master/content/images/ndrive.png"></a>
-      <a class="reference external image-reference pure-u-1-3" target="_blank" href="https://github.com/carpedm20/korail2"><img alt="korail" class="fb-bot" src="https://raw.githubusercontent.com/carpedm20/blog/master/content/images/korail.png"></a>
-      <!--<a class="reference external image-reference pure-u-1-3" target="_blank" href="https://drive.google.com/file/d/18tYoJlaU0FxHD2pvKvFe52hY-bJfoDav/view?usp=sharing"><img alt="UNIST" class="fb-bot" src="http://home.unist.ac.kr/professor/skkwak/images/index/university_identity.jpg"></a>-->
-      <a class="reference external image-reference pure-u-1-3" target="_blank" href="http://dailysecu.com/news_view.php?article_id=5781"><img alt="yes24" class="fb-bot" src="https://raw.githubusercontent.com/carpedm20/blog/master/content/images/yes24.jpg"></a>
-      <br/>
-   </div>
-   <div class="visible">
-      <ul class="simple">
-      <li>LINE :: Mobile Application Reverse Engineering :: <a class="reference external" href="https://github.com/carpedm20/LINE">PoC</a> :: <a class="reference external" href="https://www.slideshare.net/secret/ClwAY7UwEp7s1e">PPT</a></li>
-      <li>KakaoTalk :: Mobile Application Reverse Engineering :: <a class="reference external" href="https://github.com/carpedm20/kakaotalk">PoC</a> :: <a class="reference external" href="https://www.slideshare.net/secret/ClwAY7UwEp7s1e">PPT</a></li>
-      <li>Between :: Windows Application Reverse Engineering :: <a class="reference external" href="https://github.com/carpedm20/between">PoC</a></li>
-      <li>Ndrive :: Web Protocol Reverse Engineering :: <a class="reference external" href="https://github.com/carpedm20/ndrive">PoC</a></li>
-      <li>Korail :: Mobile Application Reverse Engineering :: <a class="reference external" href="https://github.com/carpedm20/korail2">PoC</a></li>
-      <li>UNIST :: Reverse Engineering & Network Exploit :: <a class="reference external" href="https://drive.google.com/file/d/18tYoJlaU0FxHD2pvKvFe52hY-bJfoDav/view?usp=sharing">Report</a></li>
-      <li>yes24 :: Secret :: <a class="reference external" href="http://dailysecu.com/news_view.php?article_id=5781">Article</a></li>
-      </ul>
-   </div>
-
-
-Visualization
-~~~~~~~~~~~~~
-
-.. raw:: html
-
-   <div class="pure-g hidden">
-      <a class="reference external image-reference" target="_blank" href="https://github.com/carpedm20/ausung"><img alt="Voxoffice" class="align-center" src="https://raw.githubusercontent.com/carpedm20/ausung/master/contents/demo.PNG" style="width: 90%;"></a>
-      <br/>
-      <a class="reference external image-reference" target="_blank" href="https://github.com/carpedm20/voxoffice"><img alt="Voxoffice" class="align-center" src="https://raw.githubusercontent.com/carpedm20/voxoffice/master/static/main2.png" style="width: 90%;"></a>
-      <br/>
-   </div>
-
-- Ausung :: A Data Visualization of Media Sentiments :: `code <https://github.com/carpedm20/ausung>`__
-- Vox Office :: A Streamgraph Data Visualization of Box Office Ranking :: `code <https://github.com/carpedm20/voxoffice>`__ :: demo
-- All about critics :: A Novel Aproach to Compare The Pattern of Critics and Users :: `code <https://github.com/carpedm20/all-about-critics>`__ :: demo
-
-
-Open Source Contribution
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-- Main committer of `line <https://github.com/carpedm20/LINE>`__, `emoji <https://github.com/carpedm20/emoji>`__, `awesome-hacking <https://github.com/carpedm20/awesome-hacking>`__, `awesome-torch <https://github.com/carpedm20/awesome-torch>`__, `korail2 <https://github.com/carpedm20/korail2>`__, `between <https://github.com/carpedm20/between>`__, `ndrive <https://github.com/carpedm20/ndrive>`__ etc.
-- `pinpoint <https://github.com/carpedm20/pinpoint>`__ :: open source APM (Application Performance Management) tool :: Minor contribution `#318 <https://github.com/naver/pinpoint/pull/318>`__
-- `yaksok <https://github.com/carpedm20/yaksok>`__ :: Programming language for Korean :: Minor contribution `#3 <https://github.com/yaksok/yaksok/pull/3>`__
-
-
-2015
-~~~~
-
-.. raw:: html
-
-   <div class="pure-g hidden">
-      <!--<a class="reference external image-reference" target="_blank" href="http://github.com/carpedm20/ggomggom-email/"><img alt="LINE" class="align-center" src="https://raw.githubusercontent.com/carpedm20/blog/master/content/images/email.png" style="width: 90%;"></a>-->
-   </div>
-
-- `PaperTrend <https://github.com/aikorea/PaperTrend>`__ :: Analyzing Trends in Research Papers :: Flask & React.js
-- `awesome-hacking <https://github.com/carpedm20/awesome-hacking>`__ :: A curated list of awesome Hacking tutorials, tools and resources :: Hacking
-- `Chrome Email Checker <https://github.com/carpedm20/ggomggom-email>`__ :: Chrome extension:: `Chrome web store <https://chrome.google.com/webstore/detail/%EA%BC%BC%EA%BC%BC%ED%95%9C-%EC%9D%B4%EB%A9%94%EC%9D%BC/enikkgcjnbdkcfjehoncjmogbilhdapf/reviews?hl=ko&gl=001>`__
-
-
-2014
-~~~~
-
-.. raw:: html
-
-   <div class="pure-g hidden">
-      <a class="reference external image-reference" target="_blank" href="http://carpedm20.github.io/line/"><img alt="LINE" class="align-center" src="https://raw.githubusercontent.com/carpedm20/blog/master/content/images/line2.png" style="width: 90%;"></a>
-      <br/>
-      <a class="reference external image-reference" target="_blank" href="https://github.com/carpedm20/movietag"><img alt="MovieTag" class="align-center" src="https://raw.githubusercontent.com/carpedm20/movietag/master/content/screenshot1.png" style="width: 90%;"></a>
-   </div>
-
-- `MovieTag`_ :: Django :: Machine Learning
-- `emoji`_ :: Python library
-- `UNIST Bus When? <https://github.com/carpedm20/chrome-unist-bus>`__ :: Chrome extension :: `Chrome web store <https://chrome.google.com/webstore/detail/unist-bus-when/bjlijmbdlcjimbaehpppflcgmdgjlgme>`__
-
-
-2013
-~~~~
-
-.. raw:: html
-
-   <div class="pure-g hidden">
-      <a class="reference external image-reference" target="_blank" href="http://carpedm20.blogspot.kr/2013/08/blog-post.html" style="width: 100%;"><img alt="HeXA Bot" class="align-center" src="https://raw.githubusercontent.com/carpedm20/blog/master/content/images/hexabot.png" style="width: 60%;"></a>
-      <br/>
-     <!-- <a class="reference external image-reference" target="_blank" href="https://github.com/carpedm20/movieduk"><img alt="MovieDuk" class="align-center" src="https://raw.githubusercontent.com/carpedm20/blog/master/content/images/movieduk.png" style="width: 90%;"></a>-->
-   </div>
-
-- `MovieDuk`_ :: Django
-- `HeXA Bot <http://carpedm20.blogspot.kr/2013/08/blog-post.html>`__ :: KakaoTalk Messenger bot
-- `UNIST Robot`_ :: Windows program (C#)
-
-Facebook bot
-~~~~~~~~~~~~
-
-.. raw:: html
-
-   <div class="pure-g hidden" style="width:100%">
-      <a class="reference external image-reference pure-u-1-3" target="_blank" href="https://www.facebook.com/comgong.job"><img alt="Comgong-Job" class="fb-bot" src="https://raw.githubusercontent.com/carpedm20/blog/master/content/images/comgong.png"></a>
-      <a class="reference external image-reference pure-u-1-3" target="_blank" href="https://www.facebook.com/comgong.abroad"><img alt="Comgong-Abroad" class="fb-bot" src="https://raw.githubusercontent.com/carpedm20/blog/master/content/images/abroad.png"></a>
-      <a class="reference external image-reference pure-u-1-3" target="_blank" href="https://www.facebook.com/unistbap"><img alt="UNIST-bap" class="fb-bot" src="https://raw.githubusercontent.com/carpedm20/blog/master/content/images/bap.png"></a>
-      <a class="reference external image-reference pure-u-1-3" target="_blank" href="https://www.facebook.com/hexa.portal"><img alt="UNIST-Portal-bot" class="fb-bot" src="https://raw.githubusercontent.com/carpedm20/blog/master/content/images/portalbot.jpg"></a>
-      <a class="reference external image-reference pure-u-1-3" target="_blank" href="https://www.facebook.com/unistfedex"><img alt="UNIST-Fedex" class="fb-bot" src="https://raw.githubusercontent.com/carpedm20/blog/master/content/images/fedex.png"></a>
-      <a class="reference external image-reference pure-u-1-3" target="_blank" href="https://www.facebook.com/unistbus"><img alt="UNIST-Bus" class="fb-bot" src="https://raw.githubusercontent.com/carpedm20/blog/master/content/images/unist-bus.png"></a>
-      <br/>
-   </div>
-   <div class="visible">
-      <ul class="simple">
-      <li><a class="reference external" href="https://github.com/carpedm20/comgong-job">Let's Work CS</a> :: <strong>2,954</strong> users :: Facebook bot :: <a class="reference external" href="https://www.facebook.com/comgong.job">Facebook link</a></li>
-      <li><a class="reference external" href="https://github.com/carpedm20/comgong-abroad">Let's Go Abroad CS</a> :: <strong>2,886</strong> users :: Facebook bot :: <a class="reference external" href="https://www.facebook.com/comgong.abroad">Facebook link</a></li>
-      <li><a class="reference external" href="https://github.com/carpedm20/bap-15min-before">15 minutes Before Lunch</a> :: <strong>1,541</strong> users (<strong>1 of 3</strong> UNIST students used) :: Faecebook bot :: <a class="reference external" href="https://www.facebook.com/unistbap?">Facebook link</a></li>
-      <li><a class="reference external" href="https://github.com/carpedm20/UNIST-portal-bot">UNIST Portal Bot</a> :: <strong>1,381</strong> users (<strong>1 of 3</strong> UNIST students used) :: Facebook bot :: <a class="reference external" href="https://www.facebook.com/hexa.portal">Facebook link</a></li>
-      <li><a class="reference external" href="https://github.com/carpedm20/UNIST-FedEx">UNIST FedEx</a> :: 785 users (<strong>1 of 4</strong> UNIST students used) :: Facebook bot :: <a class="reference external" href="https://www.facebook.com/unistfedex?">Facebook link</a></li>
-      </ul>
-   </div>
-
-
-.. raw:: html
-
-   <br>
-   <hr>
 
 Presentations
 -------------
