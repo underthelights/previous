@@ -38,6 +38,8 @@ author:
   # googleplus: 
   linkedin: kyuhwan-shim-a95b31198/
   instagram: s.kyuhwn
+  aboutme: Hi, this is Lijia Yu. I made the Freshman21 theme. Please enjoy it. # these are shown on aboutme-box(sidebar).
+  aboutme_photo: https://i.imgur.com/rwLz1DI.png # your personal photo.
 
 sass:
   sass_dir: _sass
