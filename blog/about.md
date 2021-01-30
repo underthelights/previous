@@ -5,32 +5,17 @@ key: page-about
 ---
 Welcome to my blog! :earth_asia: :earth_africa: :earth_americas:
 
-
-.. raw:: html
-
-    <ul id="menu" class="menu mfb-component--br mfb-zoomin" data-mfb-toggle="hover">
-      <li class="mfb-component__wrap">
-        <span id="showcode" class="showcode mfb-component__button--main">
-         <i class="ion-eye-disabled icon-yepcode"></i>
-         <i class="ion-eye icon-nocode"></i>
-        </span>
-      </li>
-    </ul>
-
-Profile
+### Profile
 -------
-
-.. raw:: html
-
    <ul class="simple">
-      <li>Research Engineer at <a class="reference external" href="http://openai.com/">OpenAI</a></li>
-      <li>CV : <a class="reference external" target="_blank" href="https://raw.githubusercontent.com/carpedm20/blog/HEAD/content/CV_Taehoon_Kim_Public.pdf">[PDF] (as of Mar. 2019)</a></li>
+      <li>Chief Research Officer at <a class="reference external"href="http://oconnect3.netlify.app">OCONNECT</a></li>
+      <li>CV : <a class="reference external" target="_blank" href="https://raw.githubusercontent.com/carpedm20/blog/HEAD/content/CV_Taehoon_Kim_Public.pdf">[PDF] (as of Nov. 2020)</a></li>
    </ul>
 
 
 Links
 -----
-:Email: **carpedm20** at gmail.com
+:Email: **`mailto:skh7343@cnsh.hs.kr`**
 :Github: `github.com/carpedm20`_
 :Twitter: `twitter.com/carpedm20`_
 :Linkedin: `linkedin.com/in/carpedm20`_
