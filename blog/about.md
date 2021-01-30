@@ -5,8 +5,6 @@ key: page-about
 ---
 Welcome to my blog! :earth_asia: :earth_africa: :earth_americas:
 
-:slug: about
-:comments: no
 
 .. raw:: html
 
