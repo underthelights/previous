@@ -1,9 +1,11 @@
 ---
 layout: article
-title: 我
+title: KyuHwan Shim
 key: page-about
 ---
 Welcome to my blog! :earth_asia: :earth_africa: :earth_americas:
+
+
 
 My Name is KyuHwan Shim, I'm Cheif Research Officer of [oconnect.com](https://oconnect.com) in Ulsan, Korea.
 
