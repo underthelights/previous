@@ -8,8 +8,8 @@ Welcome to my blog! :earth_asia: :earth_africa: :earth_americas:
 Profile
 -----
    <ul class="simple">
-      <li>Chief Research Officer at <a class="reference external"href="http://oconnect3.netlify.app">OCONNECT</a></li>
-      <li>CV : <a class="reference external" target="_blank" href="https://raw.githubusercontent.com/carpedm20/blog/HEAD/content/CV_Taehoon_Kim_Public.pdf">[PDF] (as of Nov. 2020)</a></li>
+      <li>Chief Research Officer at [OCONNECT](http://oconnect3.netlify.app"></li>
+      <li>CV : <a class="reference external" target="_blank" href="https://github.com/underthelights/underthelights/files/5909297/cv_KyuHwanShim.pdf">[PDF] (as of Feb. 2021)</a></li>
    </ul>
 
 
