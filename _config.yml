@@ -18,9 +18,9 @@
 ##############################
 url: https://underthelights.github.io
 baseurl: 
-title: BE HUMBLE.
+title: S.KYUHWN
 description: >
-    s.kyuhwn github blog 
+    S.KYUHWN GitBlog
 
 
 ## => Language and Timezone
@@ -32,7 +32,7 @@ timezone: Asia/Seoul
 ## => Author and Social
 ##############################
 author:
-  name: Kyu-Hwan Shim
+  name: KyuHwan Shim
   email: mailto:skh7343@cnsh.hs.kr
   github: underthelights
   # googleplus: 
