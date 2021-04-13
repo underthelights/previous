@@ -17,122 +17,15 @@ PART III / Optimization for Neural Network
 <!--more-->
 PART III / Optimization for Neural Network 
 
-### 1. [Overfitting](https://github.com/underthelights/underthelights.github.io/blob/main/_posts/ai/mainconcept/2020-11-03-PART-III-%7C-NN-Optimization.md#1-overfitting)
 
-#### 1.1. [Definition of Overfitting](https://github.com/underthelights/underthelights.github.io/blob/main/_posts/ai/mainconcept/2020-11-03-PART-III-%7C-NN-Optimization.md#11-definition-of-overfitting)
-
-#### 1.2. [Overfitting을 해결하는 방법](https://github.com/underthelights/underthelights.github.io/blob/main/_posts/ai/mainconcept/2020-11-03-PART-III-%7C-NN-Optimization.md#12-overfitting%EC%9D%84-%ED%95%B4%EA%B2%B0%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95)
-
-### 2. [Regularization](https://github.com/underthelights/underthelights.github.io/blob/main/_posts/ai/mainconcept/2020-11-03-PART-III-%7C-NN-Optimization.md#2-regularization-overfitting%EC%97%90-%EB%8C%80%ED%95%9C-%ED%95%B4%EA%B2%B0%EC%B1%85) (Overfitting에 대한 해결책)
-
-#### 2.1. 훈련 데이터양을 통해 Overfitting 해결시의 [문제점](https://github.com/underthelights/underthelights.github.io/blob/main/_posts/ai/mainconcept/2020-11-03-PART-III-%7C-NN-Optimization.md#21-%ED%9B%88%EB%A0%A8-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%96%91%EC%9D%84-%ED%86%B5%ED%95%B4-overfitting-%ED%95%B4%EA%B2%B0%EC%8B%9C%EC%9D%98-%EB%AC%B8%EC%A0%9C%EC%A0%90)
-
-#### 2.2. Overfitting 해결을 위한 [Regularization 방식](https://github.com/underthelights/underthelights.github.io/blob/main/_posts/ai/mainconcept/2020-11-03-PART-III-%7C-NN-Optimization.md#22-overfitting-%ED%95%B4%EA%B2%B0%EC%9D%84-%EC%9C%84%ED%95%9C-regularization-%EB%B0%A9%EC%8B%9D)
-
-#### 2.3. [비고](https://github.com/underthelights/underthelights.github.io/blob/main/_posts/ai/mainconcept/2020-11-03-PART-III-%7C-NN-Optimization.md#23-%EB%B9%84%EA%B3%A0)
-
-### 2.3. [Regularization 수학적 표현](https://github.com/underthelights/underthelights.github.io/blob/main/_posts/ai/mainconcept/2020-11-03-PART-III-%7C-NN-Optimization.md#23-regularization-%EC%88%98%ED%95%99%EC%A0%81-%ED%91%9C%ED%98%84)
-
-##### 2.3.1. [L2 Regularization](https://github.com/underthelights/underthelights.github.io/blob/main/_posts/ai/mainconcept/2020-11-03-PART-III-%7C-NN-Optimization.md#231-l2-regularization)
-
-##### 2.3.2. [L1 Regularization](https://github.com/underthelights/underthelights.github.io/blob/main/_posts/ai/mainconcept/2020-11-03-PART-III-%7C-NN-Optimization.md#232-l1-regularization)
-
-##### 2.3.3. L1, L2 차이점과 선택 기준
-
-### 3. [지능적 훈련 데이터](https://github.com/underthelights/underthelights.github.io/blob/main/_posts/ai/mainconcept/2020-11-03-PART-III-%7C-NN-Optimization.md#3-%EC%A7%80%EB%8A%A5%EC%A0%81-%ED%9B%88%EB%A0%A8-%EB%8D%B0%EC%9D%B4%ED%84%B0-overfitting%EC%97%90-%EB%8C%80%ED%95%9C-%ED%95%B4%EA%B2%B0%EC%B1%85) (Overfitting에 대한 해결책)
-
-#### 3.1. 지능적 훈련을 통한 [Overfitting 해결책](https://github.com/underthelights/underthelights.github.io/blob/main/_posts/ai/mainconcept/2020-11-03-PART-III-%7C-NN-Optimization.md#31-%EC%A7%80%EB%8A%A5%EC%A0%81-%ED%9B%88%EB%A0%A8%EC%9D%84-%ED%86%B5%ED%95%9C-overfitting-%ED%95%B4%EA%B2%B0%EC%B1%85)
-
-#### 3.2.  [CASE STUDY](https://github.com/underthelights/underthelights.github.io/blob/main/_posts/ai/mainconcept/2020-11-03-PART-III-%7C-NN-Optimization.md#32--case-study-%ED%95%84%EA%B8%B0%EC%B2%B4-%EC%88%AB%EC%9E%90-%EC%9D%B8%EC%8B%9D%EC%9D%84-%EC%9C%84%ED%95%9C-%EC%A7%80%EB%8A%A5%EC%A0%81-%ED%9B%88%EB%A0%A8%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%A7%8C%EB%93%A4%EA%B8%B0) : "필기체 숫자 인식"을 위한 지능적 훈련데이터 만들기
-
-##### 3.2.1. [Affine Transform]을 이용한 지능적 훈련 데이터 생성.
-
-##### 3.2.2. [Elastic Distortion]을 이용한 지능적 훈련 데이터 생성.
-
-##### 3.2.3. 기타 분야에서의 지능적 훈련 데이터 만들기
-
-### 4. Dropout (Overfitting에 대한 해결책)
-
-#### 4.1. Introduction
-
-#### 4.2. Dropout 개요
-
-#### 4.3. Dropout 효과
-
-##### 4.3.1. Voting 효과
-
-##### 4.3.2. Co-adaptation을 피하는 효과
-
-#### 4.4. 참조 논문 정보
-
-### 5. 학습 속도 저하 현상의 원인
-
-#### 5.1. 신경망 학습 속도의 문제점 ? “학습 속도 저하”
-
-#### 5.2. 신경망의 학습속도가 느려지는 이유 ? 
-
-### 6. Cross-Entropy Cost Function
-
-#### 6.1. Cross-Entropy Cost Function
-
-#### 6.2. Cross-Entropy의 역사
-
-#### 6.3. 신경망에서의 Cross-Entropy의 활용
-
-#### 6.4. Cross-Entropy는 정말로 MSE보다 좋은가?
-
-### 7. Activation Func. - SoftMax
-
-#### 7.1. SoftMax
-
-#### 7.2. SoftMax에 대한 정의
-
-### 8. Hyperparameters Optimization 1
-
-#### 8.1. Intro to Hyperparameteres
-
-#### 8.2. Hyperparameters @ NN, ML
-
-#### 8.3. Hyperparameter 의 종류
-
-##### 8.3.1. Learning rate
-
-##### 8.3.2. Cost function
-
-##### 8.3.3. Regularization parameter
-
-##### 8.3.4. Mini-batch 크기
-
-##### 8.3.5. Training 반복 횟수
-
-##### 8.3.6. Hidden unit의 개수
-
-##### 8.3.7. 가중치 초기화(Weight initialization)
-
-##### 8.3.8. 첨언
-
-### 9. Hyperparameters Optimization 2
-
-#### 9.1. Intro to Hyperparameters Optimization
-
-#### 9.2. How to Optimize Hyperparameters?
-
-##### 9.2.1. Manual Search9.2.2.Grid Search
-
-##### 9.2.3. Random search
-
-##### 9.2.4. Bayesian optimization
-
-### 10. [Outro]
-
-### 1. Overfitting
+## 1. Overfitting
 
 - Supervised Learning을 위한 훈련 데이터
   - 통계에서 좋은 결과를 얻으려면, 표본조사를 할 때 전체를 대표할 수 있는 우량한 샘플을 취하고, 그 샘플들로부터 전체를 잘 설명할 수 있는 모델을 만들어야 한다.
   - 전체를 대표할 수 없는 치우친 샘플을 얻게 되면, “장님 코끼리 만지기”처럼 엉뚱한 결과를 초래할 수도 있다.
   - 마찬가지로 지도학습(supervised learning)을 사용하는 기계학습법에서도 선택한 학습 알고리즘뿐만 아니라 학습을 위한 훈련 데이터(training data)의 질에 따라 학습의 결과가 좌우된다.
 
-#### 1.1. Definition of Overfitting
+### 1.1. Definition of Overfitting
 
 - Overfitting이란 통계나 기계 학습에서 사용되는 용어로서, 제한된 샘플(혹은 훈련에 사용한 한정된 데이터)에 너무 특화가 되어,  새로운 샘플에 대한 예측의 결과가 오히려 나빠지거나 학습의 효과가 나타나지 않는 경우를 말한다. 우리말로는 “과적합”이라는 용어로 번역이 되기도 하는데 좀 어색한 것 같다. Overtraining과 같은 의미로 사용이 되기 때문에 개인적으로는 “과학습”으로 번역하는 편이지만, 오십보 백보인 것 같다.
 
@@ -141,7 +34,7 @@ PART III / Optimization for Neural Network
   - 오른쪽 그림 (c)는 모든 점들을 그대로 살려 오차가 없이 추정을 하는 경우이다. 이 경우 주어진 샘플(훈련 데이터)에 대해서는 최적의 결과를 나타낼 수 있지만, 새로운 샘플이 주어지는 경우는 엉터리 결과가 나올 수도 있다.
 - 가운데 그림 (b)는 주어진 점들의 특성을 잘 나타낸다는 것을 알 수가 있으며, 비록 약간의 오차는 있지만 새로운 샘플들이 들어올 때는 좋은 결과가 나올 수도 있다.
 
-#### 1.2. Overfitting을 해결하는 방법 
+### 1.2. Overfitting을 해결하는 방법 
 
 
   - 그렇다면, 어떻게 예측하는 것이 최적의 결과를 도출해 낼 수 있을까? 즉, Overfitting의 문제에서 벗어날 수 있을까? 
@@ -157,9 +50,9 @@ PART III / Optimization for Neural Network
 
 <br>
 
-### 2. Regularization (Overfitting에 대한 해결책)
+## 2. Regularization (Overfitting에 대한 해결책)
 
-#### 2.1. 훈련 데이터양을 통해 Overfitting 해결시의 문제점
+### 2.1. 훈련 데이터양을 통해 Overfitting 해결시의 문제점
 
 
 - Overfitting의 문제를 피하기 위한, 가장 확실한 대책 중 하나는 훈련 데이터(Training data)의 양을 늘리는 것이다.
@@ -167,7 +60,7 @@ PART III / Optimization for Neural Network
 
 - 하지만, 훈련 데이터는 아무런 대가 없이 그냥 얻어지는 것이 아니다. 양질의 훈련 데이터를 얻으려면 많은 시간과 비용을 필요로 하며, 어떤 경우는 추가 데이터의 확보가 어렵거나 불가능한 경우도 있다. 또한, 학습 데이터의 양이 많아지면 결과적으로 학습에 걸리는 시간이 늘어나는 문제도 있다.
 
-#### 2.2. Overfitting 해결을 위한 Regularization 방식
+### 2.2. Overfitting 해결을 위한 Regularization 방식
 
 - 이 때 사용하는 방식이 regularization이다. Regularization은 ‘정규화’라는 말로 번역이 되기도 하지만, ‘일반화’ 라고 번역을 하는 것이 더 적합한 것 같다. 이 용어는 기계 학습뿐만 아니라 통계에서도 흔히 사용이 되는 용어이다.
 
@@ -176,8 +69,6 @@ PART III / Optimization for Neural Network
 
 
 - 지난 [Part Ⅲ. Neural Networks 최적화] 1. Overfitting 의 ‘[오캄의 면도날(Occam’s razor)]’ 이론에서 소개했던 것처럼, 대체로 복잡한 쪽보다는 간단한 쪽으로 선택을 유도한다. 통상적으로 기계학습이나 통계적 추론을 할 때 cost function 혹은 error function이 작아지는 쪽으로 진행을 하게 된다. 단순하게 작아지는 쪽으로만 진행을 하다 보면, 특정 가중치 값들이 커지면서 오히려 결과를 나쁘게 하는 경우도 있다. 아래 그림은 regularization을 통해 더 좋은 학습 결과를 가져오는 경우를 보여주는 그림이다.
-
-#### 2.3. 비고
 
 - Regularization 의미 해석
   - 그럼 왜 regularization을 하는 것일까? 즉, w가 작아지도록 학습을 한다는 것은 무슨 의미를 갖는 것일까?
@@ -223,9 +114,9 @@ PART III / Optimization for Neural Network
 
   
 
-### 3. 지능적 훈련 데이터 (Overfitting에 대한 해결책)
+## 3. 지능적 훈련 데이터 (Overfitting에 대한 해결책)
 
-#### 3.1. 지능적 훈련을 통한 Overfitting 해결책
+### 3.1. 지능적 훈련을 통한 Overfitting 해결책
 
 
 - Overfitting의 문제를 피하기 위한 가장 확실한 대책 중 하나는 훈련 데이터(Training data)의 양을 늘리는 것이다. 
@@ -233,7 +124,7 @@ PART III / Optimization for Neural Network
 - 하지만, 훈련 데이터는 아무런 대가 없이 그냥 얻어지는 것이 아니다. 양질의 훈련 데이터를 얻으려면 많은 시간과 비용을 필요로 하며, 어떤 경우는 추가 데이터의 확보가 어렵거나 불가능한 경우도 있다.
 - 그래서 제한된 훈련 데이터만으로 최적의 결과를 도출하기 위한 방법으로, 지난 [Part Ⅲ. Neural Networks 최적화] 2. Regularization에서는 “regularization”에 대하여 살펴보았다.이번 class에서는 훈련 데이터의 양을 늘리는, 그것도 효율적으로 늘리는 방법에 대해서 살펴볼 예정이다.
 
-#### 3.2.  [CASE STUDY] "필기체 숫자 인식"을 위한 지능적 훈련데이터 만들기
+### 3.2.  [CASE STUDY] "필기체 숫자 인식"을 위한 지능적 훈련데이터 만들기
 
 
 - 예를 들어, 필기체 숫자를 인식하는 알고리즘을 개발한다고 하면, 훈련 데이터 확보를 위해 수만 혹은 수십만 명을 만나 아래와 같은 필기체 훈련 데이터를 확보해야 한다. 
@@ -269,9 +160,9 @@ PART III / Optimization for Neural Network
 
 <br>
 
-### 4. Dropout (Overfitting에 대한 해결책)
+## 4. Dropout (Overfitting에 대한 해결책)
 
-#### 4.1. Introduction
+### 4.1. Introduction
 
 
 - Overfitting에 대한 또 다른 해결책 - Dropout
@@ -288,7 +179,7 @@ PART III / Optimization for Neural Network
 
    - 일반적으로 신경망에서 hidden layer의 개수가 많아지면, 즉 deep neural network이 되면, 더욱 많은 문제를 해결할 수 있도록 학습 능력이 좋아진다. 하지만, 망의 크기가 커지면 커질수록 overfitting에 빠질 가능성이 높아지고, 신경망에 대한 학습 시간도 길어지는 문제가 있으며, 적절한 결과를 도출하려면 훈련 데이터의 양 또한 늘려야 한다.
 
-#### 4.2. Dropout 개요
+### 4.2. Dropout 개요
 
 - 이렇게 망의 크기가 커질 경우 Overfitting 문제를 피하기 위한 방법이 dropout이며, 논문이 발표된 지 채 10년이 넘지 않았다.
 
@@ -296,32 +187,32 @@ PART III / Optimization for Neural Network
 
 - 일정한 mini-batch 구간 동안 생략된 망에 대한 학습을 끝내면, 다시 무작위로 다른 뉴런들을 생략(dropout) 하면서 반복적으로 학습을 수행한다.
 
-#### 4.3. Dropout 효과
+### 4.3. Dropout 효과
 
 - 그럼 이렇게 dropout을 하는 이유는 무엇이고, dropout은 과연 효과가 있을까?
 
-##### 4.3.1. Voting 효과
+#### 4.3.1. Voting 효과
 
 - Dropout을 하는 첫 번째 이유는 투표(voting) 효과 때문이다.
 - 일정한 mini-batch 구간 동안 줄어든 망을 이용해 학습을 하게 되면, 그 망은 그 망 나름대로 overfitting이 되며, 다른 mini-batch 구간 동안 다른 망에 대해 학습을 하게 되면, 그 망에 대해 다시 일정 정도 overfitting이 된다.
 - 이런 과정을 무작위로 반복을 하게 되면, voting에 의한 평균 효과를 얻을 수 있기 때문에, 결과적으로 regularization과 비슷한 효과를 얻을 수 있게 되는 것이다.
 
-##### 4.3.2. Co-adaptation을 피하는 효과
+#### 4.3.2. Co-adaptation을 피하는 효과
 
 - 또 다른 이유로 co-adaptation을 피하는 효과를 들 수 있다.
 - Regularization에서 살펴본 것처럼, 특정 뉴런의 바이어스나 가중치가 큰 값을 갖게 되면 그것의 영향이 커지면서 다른 뉴런들의 학습 속도가 느려지거나 학습이 제대로 진행이 되지 못하는 경우가 있다.
 - 하지만 dropout을 하면서 학습을 하게 되면, 결과적으로 어떤 뉴런의 가중치나 바이어스가 특정 뉴런의 영향을 받지 않기 때문에 결과적으로 뉴런들이 서도 동조화(co-adaptation)이 되는 것을 피할 수 있다.
 - 특정 학습 데이터나 자료에 영향을 받지 않는 보다 강건한(robust)한 망을 구성할 수가 있게 되는 것이다.이것은 마치 오랜 시간 동안 지구상에 존재하는 생명체들이 유전자 복제가 아닌 양성 생식을 통해 유전자를 결합하고 보다 강인한 유전자들이 자연의 선택을 받아 살아남는 것과 마찬가지이다.
 
-#### 4.4. 참조 논문 정보
+### 4.4. 참조 논문 정보
 
 - Dropout에 대한 논문은 꽤 있지만, 아래 논문이 설명이 잘 된 것 같으니 참고하면 좋을 것 같다. 참고로 공동 저자들인 Geoffrey Hinton과 Yoshua Bengio는 신경망 학습 분야에서 혁혁한 연구 성과를 보이고 있는 사람들이다.
 - Dropout: A Simple Way to Prevent Neural Networks from Overfitting
 - 다음 class에서는 신경망 학습에서 overfitting과 마찬가지로 문제가 되고 있는“느린 학습 속도”를 다룰 예정이다. 느린 학습을 활성화 함수의 관점에서 살펴 보고, 문제를 해결하기 위한 “cross-entropy cost function”에 대해 살펴볼 예정이다.
 
-### 5. 학습 속도 저하 현상의 원인
+## 5. 학습 속도 저하 현상의 원인
 
-#### 5.1. 신경망 학습 속도의 문제점 ? “학습 속도 저하”
+### 5.1. 신경망 학습 속도의 문제점 ? “학습 속도 저하”
 
 - 옛날에 오줌싸개 어린이는 키를 씌워서 동네 한 바퀴를 돌게 했고, 그 이유는 아이가 크게 망신을 당해 다음부터는 오줌을 가리도록 해주기 위함이라고 했다 물론 지금은 잘못된 이론이라는 말도 있다. 이처럼, 사람은 크게 망신을 당할 정도로 큰 실수를 하게 되면, 그 충격으로 인해 다음부터는 그 실수를 하지 않게 되는 경향이 있다.
 - 즉 큰 에러가 발생할수록 학습이 잘 되는 경우가 종종 있다. (물론, 늘 그런 것은 아니지만)
@@ -331,7 +222,7 @@ PART III / Optimization for Neural Network
 
   - 이는 cost function으로 MSE 방식을 사용하고 활성함수로 Sigmoid 함수를 사용하는 경우 Sigmoid 함수의 특성과 결합하면서 문제가 생기기 때문이다.
 
-#### 5.2. 신경망의 학습속도가 느려지는 이유 ? 
+### 5.2. 신경망의 학습속도가 느려지는 이유 ? 
 
 - Sigmoid 함수의 미분 특성으로 인해
   - 설명을 쉽게 하기 위해, 아래 그림과 같이 1개의 뉴런이 있고, 뉴런의 가중치는 w, 바이어스는 b이고, 활성함수로 Sigmoid 함수를 사용한다고 하자. 
@@ -360,9 +251,9 @@ PART III / Optimization for Neural Network
 
 <br>
 
-### 6. Cross-Entropy Cost Function
+## 6. Cross-Entropy Cost Function
 
-#### 6.1. Cross-Entropy Cost Function
+### 6.1. Cross-Entropy Cost Function
 
 - 신경망(Neural Network) Cost Function으로써의 “Cross-Entropy Cost Function”
 
@@ -375,13 +266,13 @@ PART III / Optimization for Neural Network
 
 - 그 주인공이 바로 이번 Class의 주인공인 cross-entropy cost function이다. MSE와 비슷하게 표현하기 위해 ACE(Average Cross-Entropy)라고도 부른다.
 
-#### 6.2. Cross-Entropy의 역사
+### 6.2. Cross-Entropy의 역사
 
 - Cross-Entropy라는 다소 괴상한 이름은 1997년 Rubinstein이 희소 사건의 확률을 추정하기 위한 용도로 발표 되었는데, 후에 희소 사건뿐만 아니라, 일반적인 조합 최적화(combinatorial optimization)에도 적용이 가능하다는 것이 밝혀지면서 널리 쓰이게 되었다.
 
 - 원래 엔트로피(Entropy)는 클라우지우스가 열역학 제2의 법칙, 즉 “열은 높은 온도에서 낮은 온도로만 흐른다”는 것을 설명하기 위해 고안된 개념이지만, 1877년 볼츠만에 의해서 확률적인 방법으로 새롭게 정의가 되었으며, 열과 관계 없는 자연 현상도 설명할 수 있게 되었다. 현재는 분야를 가리지 않고 쓰이는 용어가 되었으며 (심지어는 철학에서도), 자연의 변화의 방향을 가리킬 때 사용된다.
 
-#### 6.3. 신경망에서의 Cross-Entropy의 활용
+### 6.3. 신경망에서의 Cross-Entropy의 활용
 
 - Information theory에서 엔트로피는 확률분포의 무작위성(randomness)을 설명하는 용도로 사용이 되며, 확률분포 p를 갖는 랜덤 변수 X를 표현하기 위한 최소의 비트 수를 나타내며 아래와 같이 표현된다.
 
@@ -402,7 +293,7 @@ PART III / Optimization for Neural Network
 - 결과만 놓고 본다면, m1이 좀 더 좋은 추정이 된다.
 - 좀 더 상세한 내용을 알고 싶다면, [링크](http://iew3.technion.ac.il/CE/)의 Cross-Entropy의 홈페이지를 방문하면 많은 자료를 찾아볼 수 있다. 하지만, 수식이 아니라 개념을 정확하게 이해하는 것이 중요하다.
 
-#### 6.4. Cross-Entropy는 정말로 MSE보다 좋은가?
+### 6.4. Cross-Entropy는 정말로 MSE보다 좋은가?
 
 - Cross-Entropy cost function은 아래 식과 같이 정의가 된다. 여기서 y는 기대값이고, a는 실제 망에서 출력된 값이라고 가정하고, n은 훈련 데이터의 개수라고 하자.
 - 이것을 [[Part Ⅲ. Neural Networks 최적화] 5. 학습 속도 저하 현상의 원인]() 에서와 마찬가지로 sigmoid 함수를 활성함수로 사용하는 경우 와 를 구하면 다음과 같다. 체인 함수의 미분 과정은 생략한다.
@@ -416,9 +307,9 @@ PART III / Optimization for Neural Network
   cross-entropy cost function을 사용하면 어떤 이유로 학습 속도 저하 현상을 개선할 수 있는지 살펴보았다.
   다음 class에서는 신경망의 출력단의 활성 함수로 많이 사용하는 SoftMax 함수에 대해 살펴 볼 예정이다.
 
-### 7. Activation Func. - SoftMax
+## 7. Activation Func. - SoftMax
 
-#### 7.1. SoftMax
+### 6.1. SoftMax
 
 - 신경망에서 뉴런의 활성 함수(activation function)로 주로 sigmoid 함수를 사용한다. 
   - sigmoid 함수를 사용하는 이유: [[Part Ⅱ. Neural Networks] 3. Basic Theory]() 에서 살펴본 것처럼, 단순하게 step function이나 linear function을 사용할 때보다 훨씬 많은 일을 할 수 있기 때문이다.
@@ -426,7 +317,7 @@ PART III / Optimization for Neural Network
 - sigmoid 함수는 입력단이나 hidden layer에 주로 사용 되며, 출력단에서도 사용된다.
 - 하지만, 실제 신경망의 응용에서는 출력단에 SoftMax 함수를 더 많이 사용하며, 특히 분류기(classifier) 관련 application은 SoftMax 함수를 쓰면 훨씬 좋다. 이번 class에서는 SoftMax 함수에 대해 살펴볼 예정이다.
 
-#### 7.2. SoftMax에 대한 정의
+### 6.2. SoftMax에 대한 정의
 
 - SoftMax는 수식으로 정리하면 아래 식과 같다. K-차원을 갖는 벡터 z를 (0,1) 범위를 갖는 σ(z)로 치환시키는 것과 같다. 자세히 보면, 확률 분포와 같다는 것을 알 수가 있으며, logistic regression이라고도 불린다.
 
@@ -451,16 +342,16 @@ PART III / Optimization for Neural Network
   - 또한 특정 항목의 변화가 최종 출력에 어떤 영향을 끼치는지를 바로 파악 가능한 효과도 덤으로 얻을 수 있다.
   - 이번 class에서는 신경망의 활성 함수로 사용하는 SoftMax 함수의 개념과 이점에 대해 살펴보았다. 다음 class에서는 신경망의 학습의 시간 및 질을 결정하는 Hyper-parameter에 대해 살펴볼 예정이다.
 
-### 8. Hyperparameters Optimization 1
+## 8. Hyperparameters Optimization 1
 
-#### 8.1. Intro to Hyperparameteres
+### 8.1. Intro to Hyperparameteres
 
 - 신경망을 통해 학습을 하게 되면, 쉽게 설명하기 어려운 많은 문제들을 해결할 수가 있을 것 같은데, 안타깝게도 잘 안 되는 경우도 많다. (신경망이 복잡할수록 이 문제는 더 커진다.)
 - 이는 신경망의 학습 방법이나 구조의 문제가 아니라, 신경망의 hyperparameter 들이 제대로 설정되지 못해 학습이 영 효과를 발휘하지 못하기 때문이다.
 - 이것은 마치 사람들이 학습할 때, 학습에 좋은 환경이 조성이 되어 있어야 학습이 효과적으로 되는 것과 비슷하다고 생각하면 된다. 맹모삼천지교를 떠올려보면 좋은 비교가 될 것 같다.
 - 이번 class에서는 신경망이 좋은 결과를 내기 위해서 반드시 고려해야 할 hyperparameter 들에 대해 살펴볼 예정이다.
 
-#### 8.2. Hyperparameters @ NN, ML
+### 8.2. Hyperparameters @ NN, ML
 
 - 그간 class를 통해 신경망의 가중치(weight)나 바이어스(bias) 값을 알아내는 것이 신경망 학습의 목표라고 배웠는데, 이 hyperparameter 라는 것들이 갑자기 튀어나오니 뭔가 무시무시한 변수가 또 있는가 하고, 좀 당황스러울 수도 있겠다.
 - 하지만, 우리는 이전 class에서 “학습 진도율(η)”이나 “일반화(regularization) 변수(λ)” 등
@@ -469,69 +360,69 @@ PART III / Optimization for Neural Network
   -> 그렇기 때문에 “meta-parameters” 또는 free parameters”라고도 불린다.
 - Bayesian statistics에서는 사전분포(priori distribution)을 나타내기 위한 용어로도 사용이 된다.이는 Bayesian statistics에서 사후 분포만으로 추정을 하는 것보다 선험적 지식에 해당하는 사전 분포를 알고 있을 때 훨씬 더 잘 추정을 할 수 있는 것과 같다.
 
-#### 8.3. Hyperparameter 의 종류
+### 8.3. Hyperparameter 의 종류
 
-##### 8.3.1. Learning rate
+#### 8.3.1. Learning rate
 
 - 학습 진도율은 “gradient”의 방향으로 얼마나 빠르게 이동을 할 것인지를 결정 한다.
 - 학습 진도율이 너무 작으면 학습의 속도가 너무 느리게 되고, 반대로 너무 크면 학습의 결과가 수렴이 안되고 진동을 하게 될 수도 있다. 
 - 사람마다 또는 학습하는 분야마다 최적의 학습 진도율이 다르듯이 유감스럽게도 학습 진도율을 학습하고자 하는 대상이나 망에 따라 적절하게 조절해야 한다.
 
-##### 8.3.2. Cost function
+#### 8.3.2. Cost function
 
 - 일반적으로 사용하는 최소 자승법을 사용할 수도 있고, [Part Ⅲ. Neural Networks 최적화 6. Cross-Entropy Cost Function 에서 살펴본 것처럼 cross-entropy 함수를 사용할 수도 있다.
 
-##### 8.3.3. Regularization parameter
+#### 8.3.3. Regularization parameter
 
 - Overfitting의 문제를 피하기 위해, [Part Ⅲ. Neural Networks 최적화 2. Regularization 에서 살펴본 것처럼 L1 또는 L2 regularization 방법을 사용할 수 있으며, 거기서 사용하는 일반화 변수(λ)는 weight decay의 속도를 조절하기 위한 용도로 사용할 수가 있다.
 
-##### 8.3.4. Mini-batch 크기
+#### 8.3.4. Mini-batch 크기
 
 - Mini-batch의 크기가 큰 경우는 병렬연산 구조를 사용할 때 효과적일 수 있으며, 크기가 작으면 더 많은 update를 할 수가 있다.
 
-##### 8.3.5. Training 반복 횟수
+#### 8.3.5. Training 반복 횟수
 
 - 학습의 조기 종료(early stopping)을 결정하는 변수가 된다. 
   - Early-stopping이란 validation set을 이용해서 학습의 효율이 더 이상 올라가지 않게 되면, 조기에 학습을 종료하는 것을 말하며, overfitting을 방지할 때 중요하게 사용된다.
 
-##### 8.3.6. Hidden unit의 개수
+#### 8.3.6. Hidden unit의 개수
 
 - 이전 클래스에서 살펴본 것처럼, hidden layer의 개수가 많아질수록 특정 훈련 데이터에 더 최적화 시킬 수 있다.
 - 또한 모든 hidden layer의 뉴런의 개수를 동일하게 유지하는 것이 같은 hidden layer의 개수에 뉴런의 개수를 가변적으로 하는 것보다 효과적이다.
 - 또한 첫번째 hidden layer에 있는 뉴런의 개수가 input layer에 있는 뉴런의 개수보다 큰 것이 효과적인 경우가 많다.
 
-##### 8.3.7. 가중치 초기화(Weight initialization)
+#### 8.3.7. 가중치 초기화(Weight initialization)
 
 - 바이어스는 일반적으로 0으로 초기화가 많이 된다.
 - 하지만 가중치의 경우는 초기화가 학습 결과에 큰 영향을 끼치기 때문에 주의가 필요하다.
 - 가중치는 보통 무작위로 초기화가 되며 범위는 [-r, r] 범위를 가진다. 이 때 r은 input layer에 있는 뉴런의 개수 제곱의 역수가 된다. 
   - 가령 입력 뉴런의 개수가 6이라면, [-1/36, 1/36] 범위 내에서 무작위로 설정을 한다.
 
-##### 8.3.8. 첨언
+#### 8.3.8. 첨언
 
 - 위에서 살펴본 것처럼, 많은 hyperparameter 들이 있으며, 위에서 열거하지 않은 것들도 있다.
 - 하지만 유감스럽게도 이런 hyperparameter 들이 어떤 경우에 최적의 결과를 내는지 아직은 정립된 이론은 없으며, 현재 최적의 hyperparameter들을 찾기 위한 4가지 방법이 있는 것으로 의견들이 모아지고 있다.
 - Hyperparameter의 설정 방법은 현재도 연구가 많이 되고 있는 분야이기는 하며, 4가지 방법에 대해서는 다음 class에서 살펴 볼 예정이다.
 
-### 9. Hyperparameters Optimization [2]
+## 9. Hyperparameters Optimization [2]
 
-#### 9.1. Intro to Hyperparameters Optimization
+### 9.1. Intro to Hyperparameters Optimization
 
 - 지난 [Part Ⅲ. Neural Networks 최적화] 8. Hyperparameters Optimization [1]을 통해 신경망에서 hyperparameter의 개념에 대해서 살펴보았다. 
 - 신경망을 통한 학습이란 결과적으로 cost function(loss function)을 최소화 시키는 가중치(weight)와 바이어스 값들을 찾아내는 것이지만, overfitting의 문제에 빠지지 않고 기대했던 수준의 결과를 얻으려면 hyperparameter에 대한 최적화 작업이 선행이 되어야 한다.
 - 하지만, 안타깝게도 아직까지는 황금률(golden rule)이 없다는 것이 일반적이고, 많은 부분을 경험이나 설계자의 직관에 의존해야 하는 실정이며, 신경망을 처음 시작하는 사람들에게는 골칫거리가 된다.
 - 그렇지만, 최적화를 위한 방법을 분류를 하면 대략적으로 4가지 방법으로 나눌 수가 있다. 이번 class에서는 hyperparameter 들을 최적화 하는 방법에 대해 알아볼 예정이다.
 
-#### 9.2. How to Optimize Hyperparameters?
+### 9.2. How to Optimize Hyperparameters?
 
 - Hyperparameter를 최적화하기 위한 방법은 다음 4가지 방법이 있다.
 
-##### 9.2.1. Manual Search
+#### 9.2.1. Manual Search
 
 - 말 그대로 설계자의 직관이나 경험에 기반하여, 최적의 파라미터를 추정하고 결과를 관찰하는 방법이다. 
 - 가령 학습 진도율(learning rate)에 대한 최적화 작업을 수행한다고 하면, 먼저 임의 값을 대입하여 결과를 살핀 후 그 값으로부터 일정 정도 떨어진 값을 다시 적용하여 결과가 움직이는 방향으로 추정해보고, 이런 과정을 반복하여 좋은 과정을 추정한다. 어떤 “탐색 이론”을 사용하는가에 따라 시간이나 질이 달라질 수 있다. 값을 하나씩 대입해보며, 최적의 답을 찾거나 시간이 허용하는 선에서의 최적의 답을 찾으면 멈춘다.
 
-##### 9.2.2.Grid Search
+#### 9.2.2.Grid Search
 
 - 큰 틀에서 보면, Manual search와 큰 차이가 없으며, 개념적으로도 비슷하다.
 - 단, Grid search의 경우는 선험적인 지식을 활용하여 문제를 분석하고, hyperparameter의 범위를 정한다.
@@ -539,20 +430,21 @@ PART III / Optimization for Neural Network
   - 그렇기 때문에 Grid search는 ‘Parameter sweep’이라고도 불린다.
 - Manual search나 Grid search를 할 때는 결과를 판정하기 위한 validation set가 필요하다.
 
-##### 9.2.3. Random search
+#### 9.2.3. Random search
 
 - Grid search와 마찬가지로 선험적인 지식을 이용하여 hyperparameter의 범위를 정한다. 그 이후에 일정한 간격으로 탐색하는 대신에 무작위로 최적값을 찾는 작업을 진행을 한다.
 - 어찌 보면, Grid search와 별 다를 것이 없어 보이지만, hyperparameter를 찾는 과정에서 시간이라는 ‘유한 자원’을 기반으로 해야 한다.
 - Bengio 박사의 “Random search for Hyperparameter optimization” 논문에 따르면, 일정한 시간 안에 결과를 내야 하는 경우, Random search를 할 때 더 좋은 결과를 내는 경향이 있다고 한다.
 
-##### 9.2.4. Bayesian optimization
+#### 9.2.4. Bayesian optimization
 
 - 앞서 살펴본 3가지 방식이 좀 효율적이지 못한 감이 있다.
 - Bayesian optimization의 기본 원리가 prior knowledge를 활용하는데 있으므로, 현재까지의 실험 결과를 바탕으로 통계적인 모델을 만들고, 그것을 바탕으로 다음 탐색을 해야 할 방향을 효과적으로 정하자는 것이 이 방법의 핵심이다.
 - 유명한 논문으로는 Adams 등이 쓴 “Practical Bayesian optimization of machine learning algorithms” 가 있다.
 - Bayesian optimization 방법을 사용하면 Random search나 Grid search를 사용하는 것에 비해 좀 더 짧은 시간에 최적값을 찾아내는 경향이 있다.
 
-### 10. outro
+##10. outro
 
 - 위에서 살펴본 것처럼, 최적의 hyperparameter를 찾는 것도 그리 쉽지는 않다. 신경망이나 머신 러닝을 하다 보면, 인간의 뇌에서 일어나고 있는 많은 것들에 경탄할 수밖에 없는 것 같다.
 - 그럼, 이번 class로 신경망에 대한 기본 개념에 대한 학습은 마치고 다음 class에서는 CNN(convolutional neural network)에 대해서 살펴볼 예정이다.
+![image](https://user-images.githubusercontent.com/46957634/114542132-824a5580-9c92-11eb-8182-ea148e8bca44.png)
