@@ -321,7 +321,8 @@ PART III / Optimization for Neural Network
 
 - SoftMax는 수식으로 정리하면 아래 식과 같다. K-차원을 갖는 벡터 z를 (0,1) 범위를 갖는 σ(z)로 치환시키는 것과 같다. 자세히 보면, 확률 분포와 같다는 것을 알 수가 있으며, logistic regression이라고도 불린다.
 
-  $$\sigma(z)_j = \frac{e^{z} k}{\sum_{k=1}^{K} {e^{z} k } } $$    for $$j=1\cdots K$$
+![그림](https://latex.codecogs.com/gif.latex?%5Csigma%28z%29_j%20%3D%20%5Cfrac%7Be%5E%7Bz%7D%20k%7D%7B%5Csum_%7Bk%3D1%7D%5E%7BK%7D%20%7Be%5E%7Bz%7D%20k%20%7D%20%7D%5C)
+
 
 - 위 식을 좀더 살펴보자.
 
