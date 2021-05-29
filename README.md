@@ -1,7 +1,6 @@
-# BE HUMBLE
+under the lights
+on the ground 
 
-My Personal Website:
+[underthelights](https://underthelights.github.io).
 
-Visit => [underthelights.github.io](https://underthelights.github.io).
-
-Powered by [Jekyll](http://jekyllrb.com/) & [TeXt Theme](https://github.com/kitian616/jekyll-TeXt-theme).
+Powered by [Jekyll](http://jekyllrb.com/) and [TeXt Theme](https://github.com/kitian616/jekyll-TeXt-theme).
