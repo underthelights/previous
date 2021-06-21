@@ -1,10 +1,4 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-#
+
 # ,--------.      ,--.   ,--. ,--.
 # '--.  .--',---.  \  `.'  /,-'  '-.
 #    |  |  | .-. :  .'    \ '-.  .-'
@@ -159,3 +153,17 @@ incremental: false
 ##############################
 server_url: "0.0.0.0"
 port: 4001
+
+## => Comments
+##############################
+
+comments:
+  provider: gitalk
+  gitalk:
+    clientID    : e4978b9f2e0ab5dcec4e
+    clientSecret: e9f9600815e85870cdb5c78dd98284388ce83f93
+    repository  : underthelights/X
+    owner       : underthelights
+    admin: # Github repo owner and collaborators, only these guys can initialize github issues, IT IS A LIST.
+      - underthelights
+#     - "the-other-admin-github-id"
