@@ -69,12 +69,6 @@ paginate: 7
 paginate_path: /blog/page:num
 
 
-## => Comments
-##############################
-comments:
-  provider: disqus
-  disqus:
-    shortname: underthelights-github-io
 
 
 ## => Pageview
@@ -157,8 +151,13 @@ port: 4001
 ## => Comments
 ##############################
 
+## => Comments
+##############################
 comments:
-  provider: gitalk
+#  provider: gitalk
+#  disqus:
+#    shortname: underthelights-github-io
+    
   gitalk:
     clientID    : e4978b9f2e0ab5dcec4e
     clientSecret: e9f9600815e85870cdb5c78dd98284388ce83f93
