@@ -159,10 +159,10 @@ comments:
 #    shortname: underthelights-github-io
     
   gitalk:
-    clientID    : e4978b9f2e0ab5dcec4e
-    clientSecret: e9f9600815e85870cdb5c78dd98284388ce83f93
-    repository  : underthelights/X
+    enable      : true
+    clientID    : 8cc66ff57a84317e7138
+    clientSecret: d1a7cd745a33c2bf709a665918201034f2c558e5
+    repository  : underthelights/underthelights.github.io/comments/
     owner       : underthelights
     admin: # Github repo owner and collaborators, only these guys can initialize github issues, IT IS A LIST.
       - underthelights
-#     - "the-other-admin-github-id"
